@@ -1,0 +1,119 @@
+# 3. Write new CSV file for specific 2 states information
+
+# Subset the 'agriculture' data frame to include only the rows where the 'State' is either "Assam" or "AnotherState"
+# The 'subset' function is used to create this subset.
+# The '%in%' operator is used to check if the 'State' of each row is in the specified list of states.
+selected_states_data <- subset(agriculture, State %in% c("Assam", "AnotherState"))
+
+# Write the 'selected_states_data' data frame to a new CSV file named 'selected_states_data.csv'
+# The 'write.csv' function is used to write the data frame to a CSV file.
+# The 'row.names = FALSE' argument is used to prevent row names from being written to the CSV file.
+write.csv(selected_states_data, file = "selected_states_data.csv", row.names = FALSE)
+
+# Print the 'selected_states_data' data frame to the console
+selected_states_data
+
+#OUTPUT
+> selected_states_data
+                  Crop Crop_Year      Season State    Area Production Annual_Rainfall   Fertilizer Pesticide        Yield
+1             Arecanut      1997 Whole Year  Assam   73814      56708          2051.4   7024878.38  22882.34    0.7960870
+2            Arhar/Tur      1997 Kharif      Assam    6637       4685          2051.4    631643.29   2057.47    0.7104348
+3          Castor seed      1997 Kharif      Assam     796         22          2051.4     75755.32    246.76    0.2383333
+4             Coconut       1997 Whole Year  Assam   19656  126905000          2051.4   1870661.52   6093.36 5238.0517390
+5         Cotton(lint)      1997 Kharif      Assam    1739        794          2051.4    165500.63    539.09    0.4209091
+6         Dry chillies      1997 Whole Year  Assam   13587       9073          2051.4   1293074.79   4211.97    0.6436364
+7                 Gram      1997 Rabi        Assam    2979       1507          2051.4    283511.43    923.49    0.4654545
+8                 Jute      1997 Kharif      Assam   94520     904095          2051.4   8995468.40  29301.20    9.9195652
+9              Linseed      1997 Rabi        Assam   10098       5158          2051.4    961026.66   3130.38    0.4613636
+10               Maize      1997 Kharif      Assam   19216      14721          2051.4   1828786.72   5956.96    0.6156522
+11               Mesta      1997 Kharif      Assam    5915      29003          2051.4    562930.55   1833.65    4.5689474
+12          Niger seed      1997 Whole Year  Assam    9914       5076          2051.4    943515.38   3073.34    0.4823529
+13               Onion      1997 Whole Year  Assam    7832      17943          2051.4    745371.44   2427.92    2.3426087
+14  Other  Rabi pulses      1997 Rabi        Assam  108297      58272          2051.4  10306625.49  33572.07    0.5208696
+15              Potato      1997 Whole Year  Assam   75259     671871          2051.4   7162399.03  23330.29    7.5613043
+16   Rapeseed &Mustard      1997 Rabi        Assam  279292     154772          2051.4  26580219.64  86580.52    0.5547826
+17                Rice      1997 Autumn      Assam  607358     398311          2051.4  57802260.86 188280.98    0.7808696
+18                Rice      1997 Summer      Assam  174974     209623          2051.4  16652275.58  54241.94    1.0604348
+19                Rice      1997 Winter      Assam 1743321    1647296          2051.4 165911859.60 540429.51    0.9413043
+20             Sesamum      1997 Whole Year  Assam   15765       8257          2051.4   1500355.05   4887.15    0.4873913
+21       Small millets      1997 Kharif      Assam   10490       5391          2051.4    998333.30   3251.90    0.4730000
+22           Sugarcane      1997 Kharif      Assam   31318    1287451          2051.4   2980534.06   9708.58   41.8969565
+23        Sweet potato      1997 Whole Year  Assam    9380      32618          2051.4    892694.60   2907.80    3.4404348
+24             Tapioca      1997 Whole Year  Assam    2465      11728          2051.4    234594.05    764.15    4.4182609
+25             Tobacco      1997 Whole Year  Assam     433         26          2051.4     41208.61    134.23    0.3800000
+26            Turmeric      1997 Whole Year  Assam   10071       6974          2051.4    958457.07   3122.01    0.6700000
+27               Wheat      1997 Rabi        Assam   84698     110054          2051.4   8060708.66  26256.38    1.2595238
+147           Arecanut      1998 Whole Year  Assam   74457      55355          2354.4   7356351.60  21592.53    0.7843478
+148          Arhar/Tur      1998 Kharif      Assam    7657       5389          2354.4    756511.60   2220.53    0.7091304
+149             Banana      1998 Whole Year  Assam   41885     581884          2354.4   4138238.00  12146.65   13.7882609
+150        Castor seed      1998 Kharif      Assam    1728        708          2354.4    170726.40    501.12    0.4114286
+151           Coconut       1998 Whole Year  Assam   20166  149866000          2354.4   1992400.80   5848.14 6045.8869570
+152       Cotton(lint)      1998 Kharif      Assam    1652        751          2354.4    163217.60    479.08    0.3991304
+153       Dry chillies      1998 Whole Year  Assam   14724       9690          2354.4   1454731.20   4269.96    0.6369565
+154               Gram      1998 Rabi        Assam    3002       1503          2354.4    296597.60    870.58    0.4604545
+155               Jute      1998 Kharif      Assam   78702     687173          2354.4   7775757.60  22823.58    9.0408696
+156            Linseed      1998 Rabi        Assam   10222       5212          2354.4   1009933.60   2964.38    0.4809091
+157              Maize      1998 Kharif      Assam   19810      13965          2354.4   1957228.00   5744.90    0.6086957
+158              Mesta      1998 Kharif      Assam    5260      25623          2354.4    519688.00   1525.40    4.9105000
+159         Niger seed      1998 Kharif      Assam    8753       4478          2354.4    864796.40   2538.37    0.5205556
+160              Onion      1998 Whole Year  Assam    8083      18341          2354.4    798600.40   2344.07    2.3404348
+161 Other  Rabi pulses      1998 Rabi        Assam  116141      62330          2354.4  11474730.80  33680.89    0.5082609
+162             Potato      1998 Whole Year  Assam   76958     611077          2354.4   7603450.40  22317.82    7.2304348
+163  Rapeseed &Mustard      1998 Rabi        Assam  288829     135631          2354.4  28536305.20  83760.41    0.4734783
+164               Rice      1998 Autumn      Assam  594979     520605          2354.4  58783925.20 172543.91    1.0556522
+165               Rice      1998 Summer      Assam  223913     446114          2354.4  22122604.40  64934.77    1.6852174
+166               Rice      1998 Winter      Assam 1635230    2288114          2354.4 161560724.00 474216.70    1.3956522
+167            Sesamum      1998 Kharif      Assam   15940       8210          2354.4   1574872.00   4622.60    0.4852174
+168      Small millets      1998 Kharif      Assam   10547       5450          2354.4   1042043.60   3058.63    0.5213636
+169          Sugarcane      1998 Whole Year  Assam   30571    1223578          2354.4   3020414.80   8865.59   39.8930435
+170       Sweet potato      1998 Whole Year  Assam    9433      32437          2354.4    931980.40   2735.57    3.4356522
+171            Tapioca      1998 Whole Year  Assam    2798      13261          2354.4    276442.40    811.42    4.4452174
+172            Tobacco      1998 Whole Year  Assam    1465        732          2354.4    144742.00    424.85    0.5695455
+173           Turmeric      1998 Whole Year  Assam   10729       7416          2354.4   1060025.20   3111.41    0.6669565
+174              Wheat      1998 Rabi        Assam   89591      90509          2354.4   8851590.80  25981.39    0.9995455
+333           Arecanut      1999 Whole Year  Assam   73464      52924          2201.8   7796734.32  19835.28    0.7460870
+334          Arhar/Tur      1999 Kharif      Assam    7266       5102          2201.8    771140.58   1961.82    0.7078261
+335             Banana      1999 Whole Year  Assam   41922     583383          2201.8   4449181.86  11318.94   13.7465217
+336        Castor seed      1999 Kharif      Assam    1726        704          2201.8    183180.38    466.02    0.4233333
+337           Coconut       1999 Whole Year  Assam   20238  150062000          2201.8   2147858.94   5464.26 5672.1165220
+338       Cotton(lint)      1999 Kharif      Assam    1637        746          2201.8    173734.81    441.99    0.4117391
+339       Dry chillies      1999 Whole Year  Assam   14418       9516          2201.8   1530182.34   3892.86    0.6369565
+340               Gram      1999 Rabi        Assam    2336       1196          2201.8    247919.68    630.72    0.4704545
+341               Jute      1999 Kharif      Assam   73545     657537          2201.8   7805330.85  19857.15    9.1317391
+342            Linseed      1999 Rabi        Assam   10248       5323          2201.8   1087620.24   2766.96    0.5027273
+343              Maize      1999 Kharif      Assam   19708      14056          2201.8   2091610.04   5321.16    0.6139130
+344              Mesta      1999 Kharif      Assam    5177      25515          2201.8    549435.01   1397.79    4.6223810
+345         Niger seed      1999 Kharif      Assam    8904       4582          2201.8    944981.52   2404.08    0.5489474
+346              Onion      1999 Whole Year  Assam    7365      17167          2201.8    781647.45   1988.55    2.3221739
+347 Other  Rabi pulses      1999 Rabi        Assam  106576      58390          2201.8  11310910.88  28775.52    0.5321739
+348             Potato      1999 Whole Year  Assam   76748     699744          2201.8   8145265.24  20721.96    8.0626087
+349  Rapeseed &Mustard      1999 Rabi        Assam  286241     129425          2201.8  30378757.33  77285.07    0.4795652
+350               Rice      1999 Autumn      Assam  557220     514156          2201.8  59137758.60 150449.40    1.0947826
+351               Rice      1999 Summer      Assam  294654     653783          2201.8  31271629.02  79556.58    1.9904348
+352               Rice      1999 Winter      Assam 1793994    2692709          2201.8 190396583.20 484378.38    1.5013043
+353            Sesamum      1999 Kharif      Assam   15143       7866          2201.8   1607126.59   4088.61    0.4852174
+354      Small millets      1999 Kharif      Assam   10681       5467          2201.8   1133574.53   2883.87    0.5027273
+355          Sugarcane      1999 Whole Year  Assam   29107    1154615          2201.8   3089125.91   7858.89   40.4347826
+356       Sweet potato      1999 Whole Year  Assam    8955      30979          2201.8    950394.15   2417.85    3.4091304
+357            Tapioca      1999 Whole Year  Assam    2836      13444          2201.8    300984.68    765.72    4.4365217
+358            Tobacco      1999 Whole Year  Assam    1373        695          2201.8    145716.49    370.71    0.5739130
+359           Turmeric      1999 Whole Year  Assam   10980       7586          2201.8   1165307.40   2964.60    0.6673913
+360              Wheat      1999 Rabi        Assam   76310      97583          2201.8   8098780.30  20603.70    1.2568182
+543           Arecanut      2000 Whole Year  Assam   73237      68261          1965.5   7189676.29  19041.62    0.9573913
+544          Arhar/Tur      2000 Kharif      Assam    7280       5159          1965.5    714677.60   1892.80    0.7143478
+545             Banana      2000 Whole Year  Assam   42534     590095          1965.5   4175562.78  11058.84   13.7321739
+546        Castor seed      2000 Kharif      Assam    1662        681          1965.5    163158.54    432.12    0.4176190
+547           Coconut       2000 Whole Year  Assam   20913  135910000          1965.5   2053029.21   5437.38 5771.3526090
+548       Cotton(lint)      2000 Kharif      Assam    1673        760          1965.5    164238.41    434.98    0.4265217
+549       Dry chillies      2000 Whole Year  Assam   14688       9681          1965.5   1441920.96   3818.88    0.6378261
+550               Gram      2000 Rabi        Assam    2661       1329          1965.5    261230.37    691.86    0.4623810
+551               Jute      2000 Kharif      Assam   69513     668439          1965.5   6824091.21  18073.38    9.7947826
+552            Linseed      2000 Rabi        Assam   10206       5278          1965.5   1001923.02   2653.56    0.5052381
+553              Maize      2000 Kharif      Assam   20241      14616          1965.5   1987058.97   5262.66    0.6056522
+554              Mesta      2000 Kharif      Assam    5049      24557          1965.5    495660.33   1312.74    4.6573684
+555         Niger seed      2000 Kharif      Assam    9044       4653          1965.5    887849.48   2351.44    0.6273684
+556              Onion      2000 Whole Year  Assam    7359      17156          1965.5    722433.03   1913.34    2.3313043
+557 Other  Rabi pulses      2000 Rabi        Assam  101474      55752          1965.5   9961702.58  26383.24    0.5217391
+558             Potato      2000 Whole Year  Assam   80504     668457          1965.5   7903077.68  20931.04    7.4595652
+559  Rapeseed &Mustard      2000 Rabi        Assam  274459     141231          1965.5  26943640.03  71359.34    0.4995652
+ [ reached 'max' / getOption("max.print") -- omitted 631 rows ]
