@@ -1,4 +1,4 @@
-# f. Get unique values from a specific feature
+# 6. Get unique values from a specific feature
 
 # The 'unique' function returns a vector of the unique values present in the input vector.
 # When used with the 'Crop' column of the 'agriculture' data frame, it will return a vector of the unique crop names in the dataset.
