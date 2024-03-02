@@ -1,0 +1,155 @@
+# 2. Factor the 'Crop' attribute and perform functions using tapply
+
+# Convert the 'Crop' column to a factor
+crop_factor <- factor(agriculture$Crop)
+
+
+
+# Calculate the mean Yield for each level of the 'Crop' factor
+# 'tapply' applies a function (in this case, 'mean') to each subset of a vector (in this case, 'Yield') defined by a factor (in this case, 'crop_factor')
+tapply(agriculture$Yield, crop_factor, mean)
+
+#OUTPUT:
+> tapply(agriculture$Yield, crop_factor, mean)
+             Arecanut             Arhar/Tur                 Bajra                Banana                Barley 
+            2.0736354             0.9673478             2.4274620            26.8511279             1.5955400 
+         Black pepper              Cardamom             Cashewnut           Castor seed              Coconut  
+            0.8296046             0.1683553             3.1204381             0.6936095          8652.0001987 
+            Coriander          Cotton(lint)         Cowpea(Lobia)          Dry chillies                Garlic 
+            0.6482002             1.7970441             0.8132239             2.0783297             4.5448859 
+               Ginger                  Gram             Groundnut             Guar seed            Horse-gram 
+            6.4422016             0.8764689             1.3609835             0.9518750             0.4628220 
+                Jowar                  Jute               Khesari               Linseed                 Maize 
+            1.0724983             7.5553927             0.7889407             0.4739305             3.4272160 
+               Masoor                 Mesta     Moong(Green Gram)                  Moth            Niger seed 
+            0.7031530             5.3892035             0.5309404             0.4459953             0.4235233 
+       Oilseeds total                 Onion    Other  Rabi pulses         Other Cereals   Other Kharif pulses 
+            1.9955593            13.2475246             0.7803798             0.8495459             0.6995135 
+       other oilseeds   Other Summer Pulses Peas & beans (Pulses)                Potato                  Ragi 
+            1.7892204             0.8599254             1.3938954            13.3317178             1.2154083 
+    Rapeseed &Mustard                  Rice             Safflower              Sannhamp               Sesamum 
+            0.7915679             2.2184945             0.5654819             1.2749587             0.6117499 
+        Small millets              Soyabean             Sugarcane             Sunflower          Sweet potato 
+            0.7687221             1.0831944            51.7274394             0.9340864             9.2407885 
+              Tapioca               Tobacco              Turmeric                  Urad                 Wheat 
+           16.6673015             2.1107084             3.3253925             0.5840478             2.0050864 
+
+
+
+# Calculate the maximum Yield for each level of the 'Crop' factor
+tapply(agriculture$Yield, crop_factor, max)
+
+#OUTPUT:
+> tapply(agriculture$Yield, crop_factor, max)
+             Arecanut             Arhar/Tur                 Bajra                Banana                Barley 
+            10.948182             68.230000             74.303077            126.387692              3.988235 
+         Black pepper              Cardamom             Cashewnut           Castor seed              Coconut  
+             4.133571              2.870000            338.548966              2.466333          21105.000000 
+            Coriander          Cotton(lint)         Cowpea(Lobia)          Dry chillies                Garlic 
+             5.492500             95.993913              2.523333             14.000000             17.000000 
+               Ginger                  Gram             Groundnut             Guar seed            Horse-gram 
+            36.357826              9.380000              3.673448             10.651481              1.300000 
+                Jowar                  Jute               Khesari               Linseed                 Maize 
+             3.579091             25.430556              1.545652              1.213333            989.870000 
+               Masoor                 Mesta     Moong(Green Gram)                  Moth            Niger seed 
+             2.123750             17.678750              1.773333              1.000000              4.987647 
+       Oilseeds total                 Onion    Other  Rabi pulses         Other Cereals   Other Kharif pulses 
+             8.527692            381.420000              4.000000              4.394000              2.800000 
+       other oilseeds   Other Summer Pulses Peas & beans (Pulses)                Potato                  Ragi 
+            21.380000              2.800000             13.101818            311.020000              4.336538 
+    Rapeseed &Mustard                  Rice             Safflower              Sannhamp               Sesamum 
+             6.345000              8.778276              1.256667              6.622609             69.366667 
+        Small millets              Soyabean             Sugarcane             Sunflower          Sweet potato 
+             2.877500              2.845000            165.000000              5.020000             26.339444 
+              Tapioca               Tobacco              Turmeric                  Urad                 Wheat 
+            42.097857             57.120500             19.308913              4.187500              5.068636 
+
+
+
+# Calculate the minimum Area for each level of the 'Crop' factor
+tapply(agriculture$Area, crop_factor, min)
+
+#OUTPUT:
+> tapply(agriculture$Area, crop_factor, min)
+             Arecanut             Arhar/Tur                 Bajra                Banana                Barley 
+               52.000                 2.000                 1.000                 1.000                19.000 
+         Black pepper              Cardamom             Cashewnut           Castor seed              Coconut  
+                4.000                 2.874                 1.000                 6.000                15.000 
+            Coriander          Cotton(lint)         Cowpea(Lobia)          Dry chillies                Garlic 
+                1.000                 1.000                32.000                 1.000                 2.000 
+               Ginger                  Gram             Groundnut             Guar seed            Horse-gram 
+                1.000                 1.000                 1.000                 1.000                 1.000 
+                Jowar                  Jute               Khesari               Linseed                 Maize 
+                1.000                 3.000                28.000                 2.000                 6.000 
+               Masoor                 Mesta     Moong(Green Gram)                  Moth            Niger seed 
+                0.500                 1.000                 1.000                 2.000                21.000 
+       Oilseeds total                 Onion    Other  Rabi pulses         Other Cereals   Other Kharif pulses 
+            26118.000                 1.000                 1.000                 4.000                 1.000 
+       other oilseeds   Other Summer Pulses Peas & beans (Pulses)                Potato                  Ragi 
+                1.000                 3.000                 2.000                 3.000                 1.000 
+    Rapeseed &Mustard                  Rice             Safflower              Sannhamp               Sesamum 
+                6.000                 7.000                 1.000                 5.000                 1.000 
+        Small millets              Soyabean             Sugarcane             Sunflower          Sweet potato 
+                1.000                 1.000                 1.000                 1.000                 1.000 
+              Tapioca               Tobacco              Turmeric                  Urad                 Wheat 
+                1.000                 0.800                 1.000                 2.000                 1.000 
+
+
+
+# Calculate the sum of Production for each level of the 'Crop' factor
+tapply(agriculture$Production, crop_factor, sum)
+
+#OUTPUT:
+> tapply(agriculture$Production, crop_factor, sum)
+             Arecanut             Arhar/Tur                 Bajra                Banana                Barley 
+             39144261              60913833             118137047             226471979              19498687 
+         Black pepper              Cardamom             Cashewnut           Castor seed              Coconut  
+              2095650                255497               3737207              24049211          308751970278 
+            Coriander          Cotton(lint)         Cowpea(Lobia)          Dry chillies                Garlic 
+              3242496             457831414                732573              26009838              18798851 
+               Ginger                  Gram             Groundnut             Guar seed            Horse-gram 
+             17681841             134316823             148626325               7227527               5276782 
+                Jowar                  Jute               Khesari               Linseed                 Maize 
+            141915435             230423821               7115452               3187572             410911181 
+               Masoor                 Mesta     Moong(Green Gram)                  Moth            Niger seed 
+             19724553              14052802              22490489                913750              40641053 
+       Oilseeds total                 Onion    Other  Rabi pulses         Other Cereals   Other Kharif pulses 
+             17535438             121700945               6437766               1661859               5246413 
+       other oilseeds   Other Summer Pulses Peas & beans (Pulses)                Potato                  Ragi 
+             10033173                  8394              14310509             629688035              44215960 
+    Rapeseed &Mustard                  Rice             Safflower              Sannhamp               Sesamum 
+             78148914            2229301180               3241790                419887              13542969 
+        Small millets              Soyabean             Sugarcane             Sunflower          Sweet potato 
+             13429255             191659664            7236536755              14644638              10409540 
+              Tapioca               Tobacco              Turmeric                  Urad                 Wheat 
+            130884693              21083719               9688934              35268564            1810754504 
+
+
+
+# Count the number of Yield values for each level of the 'Crop' factor
+tapply(agriculture$Yield, crop_factor, length)
+
+#OUTPUT:
+> tapply(agriculture$Yield, crop_factor, length)
+             Arecanut             Arhar/Tur                 Bajra                Banana                Barley 
+                  162                   508                   524                   245                   297 
+         Black pepper              Cardamom             Cashewnut           Castor seed              Coconut  
+                  126                    74                   134                   300                   172 
+            Coriander          Cotton(lint)         Cowpea(Lobia)          Dry chillies                Garlic 
+                  199                   476                   134                   419                   250 
+               Ginger                  Gram             Groundnut             Guar seed            Horse-gram 
+                  323                   490                   725                    63                   371 
+                Jowar                  Jute               Khesari               Linseed                 Maize 
+                  513                   181                    75                   308                   975 
+               Masoor                 Mesta     Moong(Green Gram)                  Moth            Niger seed 
+                  324                   210                   740                   110                   192 
+       Oilseeds total                 Onion    Other  Rabi pulses         Other Cereals   Other Kharif pulses 
+                   29                   454                   355                   146                   382 
+       other oilseeds   Other Summer Pulses Peas & beans (Pulses)                Potato                  Ragi 
+                  126                    10                   369                   628                   498 
+    Rapeseed &Mustard                  Rice             Safflower              Sannhamp               Sesamum 
+                  528                  1197                   169                   160                   685 
+        Small millets              Soyabean             Sugarcane             Sunflower          Sweet potato 
+                  485                   349                   605                   441                   273 
+              Tapioca               Tobacco              Turmeric                  Urad                 Wheat 
+                  201                   364                   337                   733                   545 
