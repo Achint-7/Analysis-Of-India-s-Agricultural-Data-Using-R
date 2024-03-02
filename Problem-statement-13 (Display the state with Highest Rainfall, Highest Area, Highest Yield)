@@ -1,0 +1,42 @@
+# 13. Extract and display the state and district name data for the highest values:
+
+# a) Highest Rainfall
+# The 'which.max' function returns the index of the maximum value in the 'Annual_Rainfall' column of the 'agriculture' data frame.
+# This index is used to subset the 'agriculture' data frame to get the row with the highest rainfall.
+# The 'c("State", "Crop")' part is used to select only the 'State' and 'Crop' columns from this row.
+# The result is assigned to 'highest_rainfall_row'.
+highest_rainfall_row <- agriculture[which.max(agriculture$Annual_Rainfall), c("State", "Crop")]
+
+# Print the state and crop with the highest rainfall to the console.
+cat("Highest Rainfall:\n")
+print(highest_rainfall_row)
+
+# b) Highest Area
+# Similar to above, but for the 'Area' column.
+highest_area_row <- agriculture[which.max(agriculture$Area), c("State", "Crop")]
+cat("\nHighest Area:\n")
+print(highest_area_row)
+
+# c) Highest Yield
+# Similar to above, but for the 'Yield' column.
+highest_yield_row <- agriculture[which.max(agriculture$Yield), c("State", "Crop")]
+cat("\nHighest Yield:\n")
+print(highest_yield_row)
+
+
+#OUTPUT
+> print(highest_rainfall_row)
+        State     Crop
+264 Meghalaya Arecanut
+ 
+
+
+> print(highest_area_row)
+          State       Crop
+111 West Bengal Niger seed
+
+
+ 
+> print(highest_yield_row)
+          State     Crop
+13963 Telangana Coconut 
