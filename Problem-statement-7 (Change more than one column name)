@@ -1,0 +1,16 @@
+# 7. Change more than one column name
+
+# The 'colnames' function is used to get or set the column names of a data frame.
+# Here, we're using it to change the names of the 3rd, 4th, and 5th columns of the 'agriculture' data frame.
+# The 'c(3, 4, 5)' part is creating a vector of column indices that we want to change.
+# The '<-' operator is used for assignment in R, so we're assigning new names to these columns.
+colnames(agriculture)[c(3, 4, 5)] <- c("New_Column_Name1", "New_Column_Name2", "New_Column_Name3")
+
+# After changing the column names, we print the column names of the 'agriculture' data frame to the console to verify that the changes have been made.
+colnames(agriculture)
+
+#OUTPUT
+> colnames(agriculture)
+ [1] "Crop"             "Crop_Year"        "New_Column_Name1" "New_Column_Name2" "New_Column_Name3" "Production"      
+ [7] "Annual_Rainfall"  "Fertilizer"       "Pesticide"        "Yield"           
+
