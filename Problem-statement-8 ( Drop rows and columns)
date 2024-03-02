@@ -1,0 +1,14 @@
+# 8. Drop rows and columns
+
+# The 'agriculture[, -c(1, 3)]' part is subsetting the 'agriculture' data frame to include all rows (since there's nothing before the comma) and all columns except the 1st and 3rd (since we're using negative indices after the comma).
+# The '<-' operator is used for assignment in R, so we're assigning the subsetted data frame back to 'agriculture', effectively dropping the 1st and 3rd columns from the data frame.
+agriculture <- agriculture[, -c(1, 3)]   # Drop columns
+
+# After dropping the columns, we print the column names of the 'agriculture' data frame to the console to verify that the columns have been dropped.
+colnames(agriculture)
+
+#OUTPUT
+
+> colnames(agriculture)
+[1] "Crop_Year"        "New_Column_Name2" "New_Column_Name3" "Production"       "Annual_Rainfall"  "Fertilizer"      
+[7] "Pesticide"        "Yield"           
