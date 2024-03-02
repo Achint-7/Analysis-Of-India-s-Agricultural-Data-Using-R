@@ -1,0 +1,39 @@
+# 10. Add multiple rows and columns in the duplicated data frame
+
+# The 'rbind' function combines data frames by rows. Here, it's used to add the rows of 'agriculture' to itself, effectively duplicating the data frame.
+# The result is assigned to 'duplicated_data'.
+duplicated_data <- rbind(agriculture, agriculture)
+
+# The 'cbind' function combines data frames by columns. Here, it's used to add the columns of 'agriculture' to itself, effectively duplicating the data frame.
+# The result is assigned back to 'agriculture'.
+agriculture <- cbind(agriculture, agriculture)
+
+# The 'summary' function provides a statistical summary of the 'agriculture' data frame, including the minimum, 1st quartile, median, mean, 3rd quartile, and maximum for numeric variables, and counts for factor variables.
+# This can give you a sense of the distribution of each variable.
+summary(agriculture)
+
+
+#OUTPUT
+
+> summary(agriculture)
+   Crop_Year    New_Column_Name2   New_Column_Name3     Production        Annual_Rainfall    Fertilizer          Pesticide       
+ Min.   :1997   Length:19687       Min.   :       0   Min.   :0.000e+00   Min.   : 301.3   Min.   :5.400e+01   Min.   :       0  
+ 1st Qu.:2004   Class :character   1st Qu.:    1390   1st Qu.:1.393e+03   1st Qu.: 940.7   1st Qu.:1.881e+05   1st Qu.:     357  
+ Median :2010   Mode  :character   Median :    9317   Median :1.380e+04   Median :1247.0   Median :1.235e+06   Median :    2422  
+ Mean   :2009                      Mean   :  179940   Mean   :1.644e+07   Mean   :1437.7   Mean   :2.411e+07   Mean   :   48852  
+ 3rd Qu.:2015                      3rd Qu.:   75094   3rd Qu.:1.227e+05   3rd Qu.:1643.7   3rd Qu.:1.001e+07   3rd Qu.:   20033  
+ Max.   :2020                      Max.   :50808100   Max.   :6.326e+09   Max.   :6552.7   Max.   :4.835e+09   Max.   :15750511  
+     Yield             Crop_Year    New_Column_Name2   New_Column_Name3     Production        Annual_Rainfall    Fertilizer       
+ Min.   :    0.000   Min.   :1997   Length:19687       Min.   :       0   Min.   :0.000e+00   Min.   : 301.3   Min.   :5.400e+01  
+ 1st Qu.:    0.600   1st Qu.:2004   Class :character   1st Qu.:    1390   1st Qu.:1.393e+03   1st Qu.: 940.7   1st Qu.:1.881e+05  
+ Median :    1.030   Median :2010   Mode  :character   Median :    9317   Median :1.380e+04   Median :1247.0   Median :1.235e+06  
+ Mean   :   79.962   Mean   :2009                      Mean   :  179940   Mean   :1.644e+07   Mean   :1437.7   Mean   :2.411e+07  
+ 3rd Qu.:    2.388   3rd Qu.:2015                      3rd Qu.:   75094   3rd Qu.:1.227e+05   3rd Qu.:1643.7   3rd Qu.:1.001e+07  
+ Max.   :21105.000   Max.   :2020                      Max.   :50808100   Max.   :6.326e+09   Max.   :6552.7   Max.   :4.835e+09  
+   Pesticide            Yield          
+ Min.   :       0   Min.   :    0.000  
+ 1st Qu.:     357   1st Qu.:    0.600  
+ Median :    2422   Median :    1.030  
+ Mean   :   48852   Mean   :   79.962  
+ 3rd Qu.:   20033   3rd Qu.:    2.388  
+ Max.   :15750511   Max.   :21105.000  
