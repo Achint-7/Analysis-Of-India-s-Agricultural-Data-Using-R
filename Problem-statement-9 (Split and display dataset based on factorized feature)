@@ -1,0 +1,508 @@
+# 9. Split and display dataset based on factorized feature
+
+# The 'split' function divides the data in the 'agriculture' data frame into subsets based on the 'crop_factor'.
+# Each subset contains all rows that have the same value for 'crop_factor'.
+# The result is a list of data frames, one for each unique value of 'crop_factor'.
+split_data <- split(agriculture, crop_factor)
+
+# The 'lapply' function applies a function (in this case, 'head') to each element of a list (in this case, 'split_data').
+# This will return the first 6 rows of each subsetted data frame in 'split_data'.
+lapply(split_data, head)
+
+#OUTPUT
+> lapply(split_data, head)
+$Arecanut
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide      Yield
+1        1997            Assam            73814      56708        2051.400  7024878.38  22882.34  0.7960870
+30       1997        Karnataka           301149     132056        1266.700 28660350.33  93356.19  0.4045455
+60       1997           Kerala            96073      74142        3252.400  9143267.41  29782.63  0.5892857
+65       1997        Meghalaya             5239      63011        3818.200   498595.63   1624.09 11.2071429
+91       1997      West Bengal              207         95        1852.900    19700.19     64.17  0.4266667
+133      1998       Puducherry               12          7        1434.588     1185.60      3.48  0.5800000
+
+$`Arhar/Tur`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+2        1997            Assam             6637       4685          2051.4   631643.3   2057.47 0.7104348
+31       1997        Karnataka              820        662          1266.7    78039.4    254.20 0.8100000
+66       1997        Meghalaya               30         15          3818.2     2855.1      9.30 0.4900000
+92       1997      West Bengal             6116       5034          1852.9   582059.7   1895.96 1.6800000
+150      1998            Assam             1728        708          2354.4   170726.4    501.12 0.4114286
+191      1998        Karnataka              451        536          1260.8    44558.8    130.79 1.1900000
+
+$Bajra
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide      Yield
+32       1997        Karnataka             3825        924        1266.700   364025.2   1185.75 0.43750000
+33       1997        Karnataka            21230       1214        1266.700  2020459.1   6581.30 0.05857143
+93       1997      West Bengal             2674          7        1852.900   254484.6    828.94 0.00000000
+134      1998       Puducherry                2          1        1434.588      197.6      0.58 0.50000000
+192      1998        Karnataka              846        498        1260.800    83584.8    245.34 0.59000000
+193      1998        Karnataka             4387      10342        1260.800   433435.6   1272.23 2.23800000
+
+$Banana
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide        Yield
+67       1997        Meghalaya             7544       5590          3818.2   717962.5   2338.64 7.966667e-01
+151      1998            Assam            20166  149866000          2354.4  1992400.8   5848.14 6.045887e+03
+178      1998              Goa            52875      15000          2964.9  5224050.0  15333.75 2.800000e-01
+245      1998           Kerala            41449       4990          3151.5  4095161.2  12020.21 4.555556e-02
+268      1998        Meghalaya             1764       1051          6552.7   174283.2    511.56 5.985714e-01
+337      1999            Assam            20238  150062000          2201.8  2147858.9   5464.26 5.672117e+03
+
+$Barley
+     Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide    Yield
+94        1997      West Bengal              660         46          1852.9   62812.20    204.60     0.07
+294       1998      West Bengal               54         38          2152.5    5335.20     15.66     0.70
+444       1999      West Bengal               35         24          2318.1    3714.55      9.45     0.69
+717       2000      West Bengal            24511  330524800          1907.7 2406244.87   6372.86 13234.93
+974       2001      West Bengal               80         73          1556.6    8170.40     20.80     0.91
+1174      2002      West Bengal               45         42          1629.1    4260.15     11.25     0.93
+
+$`Black pepper`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide        Yield
+34       1997        Karnataka            17317       2853        1266.700  1648058.9   5368.27    0.1213333
+61       1997           Kerala           884344 5210000000        3252.400 84163018.5 274146.64 5376.0542860
+135      1998       Puducherry              453        372        1434.588    44756.4    131.37    0.8400000
+179      1998              Goa            24858  121000000        2964.900  2455970.4   7208.82 4867.6500000
+195      1998        Karnataka            27246      23245        1260.800  2691904.8   7901.34    0.8318182
+246      1998           Kerala            91268      51336        3151.500  9017278.4  26467.72    0.4842857
+
+$Cardamom
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide        Yield
+35       1997        Karnataka           186579     139206          1266.7   17756723  57839.49     1.078333
+95       1997      West Bengal            24273  306202300          1852.9    2310061   7524.63 13003.787780
+196      1998        Karnataka           310399 1611530000          1260.8   30667421  90015.71  4692.261111
+247      1998           Kerala           882288 5132000000          3151.5   87170054 255863.52  5304.749286
+295      1998      West Bengal            24616  318174400          2152.5    2432061   7138.64 12448.062220
+379      1999           Kerala           925035 5680000000          2914.6   98173965 249759.45  5581.025714
+
+$Cashewnut
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide    Yield
+62       1997           Kerala           132875    2841819        3252.400 12645713.75  41191.25 22.80357
+180      1998              Goa              350        412        2964.900    34580.00    101.50  1.18000
+248      1998           Kerala            10999      17752        3151.500  1086701.20   3189.71  1.61000
+366      1999              Goa              350        513        3879.300    37145.50     94.50  1.47000
+380      1999           Kerala             4772       7702        2914.600   506452.36   1288.44  1.61000
+424      1999       Puducherry                3          2        1434.588      318.39      0.81  0.67000
+
+$`Castor seed`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+3        1997            Assam              796         22          2051.4   75755.32    246.76 0.2383333
+68       1997        Meghalaya             1766       1106          3818.2  168070.22    547.46 0.6400000
+96       1997      West Bengal            26000      52000          1852.9 2474420.00   8060.00 2.0000000
+152      1998            Assam             1652        751          2354.4  163217.60    479.08 0.3991304
+197      1998        Karnataka            17935       2982          1260.8 1771978.00   5201.15 0.1180000
+296      1998      West Bengal              200         73          2152.5   19760.00     58.00 0.3700000
+
+$`Coconut `
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide        Yield
+4        1997            Assam            19656  126905000          2051.4  1870661.5   6093.36 5238.0517390
+63       1997        Meghalaya             9569      12116          3818.2   910681.7   2966.39    1.2457143
+97       1997      West Bengal            64034      55569          1852.9  6094115.8  19850.54    0.9427778
+153      1998            Assam            14724       9690          2354.4  1454731.2   4269.96    0.6369565
+181      1998              Goa             1048       2124          2964.9   103542.4    303.92    2.0300000
+198      1998        Karnataka           636495     976876          1260.8 62885706.0 184583.55    1.5565217
+
+$Coriander
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide    Yield
+36       1997        Karnataka             4565       7895        1266.700   434451.05   1415.15 1.869444
+136      1998       Puducherry                8         23        1434.588      790.40      2.32 2.750000
+199      1998        Karnataka           170319     146498        1260.800 16827517.20  49392.51 1.123704
+426      1999       Puducherry               11         35        1434.588     1167.43      2.97 3.305000
+502      2000   Andhra Pradesh           183741     410643         935.600 18037853.97  47772.66 2.146818
+596      2000        Karnataka           172918     151043        1213.300 16975360.06  44958.68 1.049259
+
+$`Cotton(lint)`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+6        1997            Assam            13587       9073        2051.400  1293074.8   4211.97 0.6436364
+69       1997        Meghalaya             7357      45260        3818.200   700165.7   2280.67 6.0542857
+98       1997      West Bengal            25485      16994        1852.900  2425407.5   7900.35 0.5975000
+137      1998       Puducherry             1046       2062        1434.588   103344.8    303.34 1.5400000
+154      1998            Assam             3002       1503        2354.400   296597.6    870.58 0.4604545
+200      1998        Karnataka             3574       3034        1260.800   353111.2   1036.46 1.4594118
+
+$`Cowpea(Lobia)`
+     Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+3220      2010        Karnataka            99759      82155        1317.700   16570967  23942.16 1.1762069
+3221      2010        Karnataka             6608      17951        1317.700    1097655   1585.92 2.7117857
+3402      2011   Andhra Pradesh           201013     631557         861.900   33673698  66334.29 2.7980000
+3403      2011   Andhra Pradesh            47251     172647         861.900    7915488  15592.83 3.1009091
+3462      2011        Karnataka            88218      71254        1178.986   14778279  29111.94 0.9734483
+3463      2011        Karnataka             6537      15414        1178.986    1095078   2157.21 2.3757143
+
+$`Dry chillies`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide      Yield
+7        1997            Assam             2979       1507        2051.400  283511.43    923.49  0.4654545
+37       1997        Karnataka             5061       3799        1266.700  481655.37   1568.91  1.5850000
+38       1997        Karnataka             3619       4745        1266.700  344420.23   1121.89  1.2623077
+70       1997        Meghalaya              443        270        3818.200   42160.31    137.33  0.6133333
+99       1997      West Bengal            29615      38672        1852.900 2818459.55   9180.65  1.1300000
+138      1998       Puducherry               26        429        1434.588    2568.80      7.54 16.5000000
+
+$Garlic
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+39       1997        Karnataka           847666     525562          1266.7 80672373.2 262776.46 0.7094118
+202      1998        Karnataka           355326     202508          1260.8 35106208.8 103044.54 0.5734783
+252      1998           Kerala             7021       5219          3151.5   693674.8   2036.09 0.6200000
+384      1999           Kerala             6921       5144          2914.6   734525.7   1868.67 0.3700000
+599      2000        Karnataka           369473     239431          1213.3 36271164.4  96062.98 0.6223810
+651      2000           Kerala             3677       2733          2412.6   360971.1    956.02 0.3700000
+
+$Ginger
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide    Yield
+40       1997        Karnataka           192416     181071          1266.7  18312230.7  59648.96 1.133333
+71       1997        Meghalaya             4243      34683          3818.2    403806.3   1315.33 8.436667
+203      1998        Karnataka          1012577     929016          1260.8 100042607.6 293647.33 0.856800
+253      1998           Kerala             2177       1108          3151.5    215087.6    631.33 0.505000
+271      1998        Meghalaya             4241      27097          6552.7    419010.8   1229.89 7.553333
+300      1998      West Bengal            30157      34994          2152.5   2979511.6   8745.53 1.128571
+
+$Gram
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+9        1997            Assam            10098       5158          2051.4   961026.7   3130.38 0.4613636
+72       1997        Meghalaya               50         22          3818.2     4758.5     15.50 0.4400000
+100      1997      West Bengal             5645       2556          1852.9   537234.7   1749.95 0.4388889
+156      1998            Assam            10222       5212          2354.4  1009933.6   2964.38 0.4809091
+204      1998        Karnataka           217445     263118          1260.8 21483566.0  63059.05 1.3052000
+272      1998        Meghalaya               51         23          6552.7     5038.8     14.79 0.4500000
+
+$Groundnut
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide     Yield
+41       1997        Karnataka           178872      80124        1266.700 17023248.24  55450.32 0.4500000
+42       1997        Karnataka           163173      82572        1266.700 15529174.41  50583.63 0.5147059
+101      1997      West Bengal              948        450        1852.900    90221.16    293.88 0.4820000
+139      1998       Puducherry              112        366        1434.588    11065.60     32.48 3.2700000
+182      1998              Goa             8671       9220        2964.900   856694.80   2514.59 1.0600000
+183      1998              Goa             1200        324        2964.900   118560.00    348.00 0.2700000
+
+$`Guar seed`
+     Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+4760      2016   Andhra Pradesh            11425       5666           890.0    1750881   3998.75 0.4616667
+5786      2019   Andhra Pradesh            83567      39442           899.2   14353468  30919.79 0.2516667
+5787      2019   Andhra Pradesh            29995      16670           899.2    5151941  11098.15 0.6069231
+6983      1999       Tamil Nadu           491707     484265           922.8   52184864 132760.89 1.1586957
+7130      2000          Gujarat            37500      18700           379.7    3681375   9750.00 0.4850000
+7561      2001          Gujarat            44100      35000           666.5    4503933  11466.00 0.8650000
+
+$`Horse-gram`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide      Yield
+43       1997        Karnataka           389690     516093          1266.7   37086797  120803.9  1.2280000
+44       1997        Karnataka          1501172     722773          1266.7  142866539  465363.3  0.5107143
+102      1997      West Bengal           641574    7549700          1852.9   61058598  198887.9 13.4458823
+207      1998        Karnataka           420808     616645          1260.8   41575830  122034.3  1.3057143
+208      1998        Karnataka          1420162    1003450          1260.8  140312006  411847.0  0.7235000
+303      1998      West Bengal           612066    7373630          2152.5   60472121  177499.1 13.2470588
+
+$Jowar
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide    Yield
+45       1997        Karnataka             6137      15135          1266.7   584058.3   1902.47 2.470909
+46       1997        Karnataka           502797    1391132          1266.7 47851190.5 155867.07 2.687778
+47       1997        Karnataka            48844      98932          1266.7  4648483.5  15141.64 1.980000
+103      1997      West Bengal            25261      28460          1852.9  2404089.4   7830.91 1.095882
+209      1998        Karnataka             8897      23144          1260.8   879023.6   2580.13 2.461333
+210      1998        Karnataka            19806       6441          1260.8  1956832.8   5743.74 0.315000
+
+$Jute
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+10       1997            Assam            19216      14721          2051.4    1828787   5956.96 0.6156522
+73       1997        Meghalaya            17175      24878          3818.2    1634545   5324.25 1.4442857
+104      1997      West Bengal            16486       4210          1852.9    1568973   5110.66 0.2515385
+157      1998            Assam            19810      13965          2354.4    1957228   5744.90 0.6086957
+273      1998        Meghalaya            17219      25272          6552.7    1701237   4993.51 1.4571429
+305      1998      West Bengal            10323       2691          2152.5    1019912   2993.67 0.2400000
+
+$Khesari
+     Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+105       1997      West Bengal            35469     130390          1852.9  3375584.7  10995.39 2.6584615
+306       1998      West Bengal            38519     121161          2152.5  3805677.2  11170.51 2.6340000
+459       1999      West Bengal            35129      69682          2318.1  3728240.8   9484.83 1.9415385
+730       2000      West Bengal            35267      88264          1907.7  3462161.4   9169.42 2.5685714
+988       2001      West Bengal            33288      86409          1556.6  3399703.4   8654.88 2.3142857
+1189      2002      West Bengal             8859       3691          1629.1   838681.5   2214.75 0.3066667
+
+$Linseed
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+11       1997            Assam             5915      29003          2051.4   562930.6   1833.65 4.5689474
+74       1997        Meghalaya             4688      21558          3818.2   446157.0   1453.28 4.6800000
+106      1997      West Bengal            51202      35040          1852.9  4872894.3  15872.62 0.6623529
+158      1998            Assam             5260      25623          2354.4   519688.0   1525.40 4.9105000
+212      1998        Karnataka            49922     101605          1260.8  4932293.6  14477.38 1.9795238
+274      1998        Meghalaya             4681      21362          6552.7   462482.8   1357.49 4.5800000
+
+$Maize
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide     Yield
+12       1997            Assam             9914       5076          2051.4   943515.38   3073.34 0.4823529
+48       1997        Karnataka             9730      20893          1266.7   926004.10   3016.30 2.1657143
+49       1997        Karnataka           897921    1214282          1266.7 85455141.57 278355.51 1.1913333
+50       1997        Karnataka            27104      33696          1266.7  2579487.68   8402.24 1.3122222
+75       1997        Meghalaya              861        713          3818.2    81941.37    266.91 0.7525000
+107      1997      West Bengal             9689      89000          1852.9   922102.13   3003.59 9.1541667
+
+$Masoor
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+108      1997      West Bengal             1490        711          1852.9  141803.30    461.90 0.5488889
+309      1998      West Bengal              822        429          2152.5   81213.60    238.38 0.5075000
+462      1999      West Bengal              578        293          2318.1   61343.14    156.06 0.5325000
+733      2000      West Bengal              635        308          1907.7   62337.95    165.10 0.4985714
+823      2001            Assam             8206       3740          1824.7  838078.78   2133.56 0.4417391
+991      2001      West Bengal              619        311          1556.6   63218.47    160.94 0.5566667
+
+$Mesta
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+13       1997            Assam             7832      17943          2051.4   745371.4   2427.92 2.3426087
+76       1997        Meghalaya             1909       1511          3818.2   181679.5    591.79 0.7771429
+77       1997        Meghalaya            20764     200509          3818.2  1976109.9   6436.84 8.6414286
+109      1997      West Bengal             3269       1710          1852.9   311110.7   1013.39 0.5428571
+160      1998            Assam             8083      18341          2354.4   798600.4   2344.07 2.3404348
+276      1998        Meghalaya             1938       1527          6552.7   191474.4    562.02 0.7557143
+
+$`Moong(Green Gram)`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer   Pesticide     Yield
+110      1997      West Bengal             9959        303          1852.9     947798     3087.29 0.0460000
+111      1997      West Bengal         50808100   38657300          1852.9 4835406877 15750511.00 0.6988889
+112      1997      West Bengal             6512       3522          1852.9     619747     2018.72 0.4037500
+216      1998        Karnataka            41853       8104          1260.8    4135076    12137.37 0.2147826
+217      1998        Karnataka            79921     362053          1260.8    7896195    23177.09 5.3636364
+311      1998      West Bengal             9320       2980          2152.5     920816     2702.80 0.3128571
+
+$Moth
+     Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide      Yield
+6227      1997          Gujarat             2900       1800           798.9   275993.0    899.00  0.6228571
+6318      1997    Uttar Pradesh           427413     497369           473.9 40676895.2 132498.03  1.2715000
+6425      1998          Gujarat            52200    1462100           775.6  5157360.0  15138.00 30.6188889
+6453      1998          Haryana             1742       1800           687.6   172109.6    505.18  0.8485714
+6631      1998    Uttar Pradesh           492128     504552           743.4 48622246.4 142717.12  1.1153750
+6703      1999          Gujarat             5500       2600           458.9   583715.0   1485.00  0.3462500
+
+$`Niger seed`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide      Yield
+14       1997            Assam           108297      58272          2051.4 10306625.5  33572.07  0.5208696
+113      1997      West Bengal             1279        725          1852.9   121722.4    396.49  0.5850000
+114      1997      West Bengal           284015    5581553          1852.9 27029707.6  88044.65 18.2372222
+161      1998            Assam           116141      62330          2354.4 11474730.8  33680.89  0.5082609
+218      1998        Karnataka             8882      91057          1260.8   877541.6   2575.78  8.9363158
+314      1998      West Bengal             9230       6776          2152.5   911924.0   2676.70  0.7062500
+
+$`Oilseeds total`
+     Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+4447      2015   Andhra Pradesh             7375     122524           940.7  1164586.2   2433.75  14.99583
+4772      2016   Andhra Pradesh            32006     555944           890.0  4904919.5  11202.10  21.05417
+4773      2016   Andhra Pradesh             3511      77209           890.0   538060.8   1228.85  22.11000
+5105      2017   Andhra Pradesh            17336     662728           868.2  2729379.8   6587.68 381.42000
+5106      2017   Andhra Pradesh             7382     249866           868.2  1162222.1   2805.16  44.62000
+5453      2018   Andhra Pradesh            24750     677050          1220.5  4014450.0   8662.50 247.57273
+
+$Onion
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+15       1997            Assam            75259     671871        2051.400  7162399.0  23330.29  7.561304
+140      1998       Puducherry             4945      11518        1434.588   488566.0   1434.05  2.460000
+162      1998            Assam            76958     611077        2354.400  7603450.4  22317.82  7.230435
+219      1998        Karnataka             4797      55339        1260.800   473943.6   1391.13 11.866316
+220      1998        Karnataka             1730      15872        1260.800   170924.0    501.70  9.265882
+221      1998        Karnataka              494       4882        1260.800    48807.2    143.26  8.948182
+
+$`Other  Rabi pulses`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+16       1997            Assam           279292     154772          2051.4 26580219.6  86580.52 0.5547826
+78       1997        Meghalaya             6914       4467          3818.2   658005.4   2143.34 0.6085714
+163      1998            Assam           288829     135631          2354.4 28536305.2  83760.41 0.4734783
+184      1998              Goa             2500       2476          2964.9   247000.0    725.00 0.9900000
+278      1998        Meghalaya             6916       4576          6552.7   683300.8   2005.64 0.6357143
+349      1999            Assam           286241     129425          2201.8 30378757.3  77285.07 0.4795652
+
+$`Other Cereals`
+     Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide    Yield
+1593      2004           Kerala           105349     241824          2880.2   11413511  22123.29 2.271538
+1831      2005           Kerala            98256     212520          3030.9   11782860  20633.76 2.096923
+2150      2006           Kerala            83859     191241          3429.7   10709633  18448.98 2.270769
+2385      2007           Kerala            77533     168108          3489.6   10342902  12405.28 2.070000
+2680      2008           Kerala            79381     192770          2524.8   11354658   7144.29 2.295385
+3009      2009           Kerala            77249     192050          2821.5   12036939  13132.33 2.303077
+
+$`Other Kharif pulses`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide    Yield
+115      1997      West Bengal            12607      15330          1852.9  1199808.2   3908.17  0.98600
+185      1998              Goa            41000     104249          2964.9  4050800.0  11890.00  2.54000
+315      1998      West Bengal           318199    6689636          2152.5 31438061.2  92277.71 18.95944
+371      1999              Goa            40500      96281          3879.3  4298265.0  10935.00  2.38000
+468      1999      West Bengal             2478      33214          2318.1   262990.1    669.06 13.40000
+525      2000   Andhra Pradesh            83492      92780           935.6  8196409.6  21707.92  1.17200
+
+$`other oilseeds`
+     Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide     Yield
+1070      2002            Assam             7013       4961        1973.600    663920.7   1753.25 0.7108696
+1137      2002       Tamil Nadu            44127      24067         315.900   4177503.1  11031.75 0.5354167
+1276      2003            Assam             7012       4940        2213.700    694047.8   1682.88 0.7086957
+3446      2011        Karnataka           216168    1750573        1178.986  36212463.4  71335.44 8.2219048
+3447      2011        Karnataka           767419     351611        1178.986 128558030.9 253248.27 0.5200000
+3895      2013            Assam             6130       5642        1797.700    885723.7   1655.10 0.9218519
+
+$`Other Summer Pulses`
+      Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+4826       2016       Puducherry                6         10          1391.3     919.50      2.10 1.6700000
+5163       2017       Puducherry                3          9          1582.4     472.32      1.14 3.0000000
+5510       2018       Puducherry                1          3          1693.9     162.20      0.35 3.0000000
+5855       2019       Puducherry                4         10          1317.0     687.04      1.48 2.5000000
+15031      2016      Maharashtra             9233       3317          1151.1 1414957.25   3231.55 0.3696154
+15296      2016      Uttarakhand             6583      55540          1580.9 1008844.75   2304.05 9.6790909
+
+$`Peas & beans (Pulses)`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide    Yield
+222      1998        Karnataka             1583      13707          1260.8   156400.4    459.07  7.82700
+223      1998        Karnataka            28755     317052          1260.8  2840994.0   8338.95 12.37333
+224      1998        Karnataka             4173      82124          1260.8   412292.4   1210.17 18.90714
+316      1998      West Bengal            12895      15648          2152.5  1274026.0   3739.55  0.91000
+469      1999      West Bengal           313373    7449103          2318.1 33258276.5  84610.71 20.56778
+740      2000      West Bengal            12651      15242          1907.7  1241948.7   3289.26  0.92600
+
+$Potato
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide      Yield
+17       1997            Assam           607358     398311          2051.4 57802260.9 188280.98  0.7808696
+79       1997        Meghalaya           105170     150101          3818.2 10009028.9  32602.70  1.3785714
+116      1997      West Bengal           327123     250950          1852.9 31132295.9 101408.13  0.7183333
+164      1998            Assam           594979     520605          2354.4 58783925.2 172543.91  1.0556522
+225      1998        Karnataka             1137      19387          1260.8   112335.6    329.73 17.6000000
+226      1998        Karnataka              268       3910          1260.8    26478.4     77.72 14.5900000
+
+$Ragi
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide    Yield
+51       1997        Karnataka            13521      25035        1266.700    1286794   4191.51 1.847778
+52       1997        Karnataka          1031530    2340493        1266.700   98170710 319774.30 2.233500
+53       1997        Karnataka            53889     109350        1266.700    5128616  16705.59 2.073846
+117      1997      West Bengal           423121     751970        1852.900   40268426 131167.51 1.837222
+141      1998       Puducherry            13961      30220        1434.588    1379347   4048.69 2.555000
+186      1998              Goa            15439      46925        2964.900    1525373   4477.31 3.040000
+
+$`Rapeseed &Mustard`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide     Yield
+18       1997            Assam           174974     209623          2051.4  16652275.6  54241.94 1.0604348
+80       1997        Meghalaya             1326        688          3818.2    126195.4    411.06 0.5757143
+118      1997      West Bengal          1206829    3569520          1852.9 114853915.9 374116.99 2.8438889
+165      1998            Assam           223913     446114          2354.4  22122604.4  64934.77 1.6852174
+232      1998        Karnataka            51782     106072          1260.8   5116061.6  15016.78 2.0542857
+280      1998        Meghalaya             1322        694          6552.7    130613.6    383.38 0.5757143
+
+$Rice
+   Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide      Yield
+19      1997            Assam          1743321    1647296          2051.4 165911859.6 540429.51  0.9413043
+20      1997            Assam            15765       8257          2051.4   1500355.1   4887.15  0.4873913
+21      1997            Assam            10490       5391          2051.4    998333.3   3251.90  0.4730000
+54      1997        Karnataka           268044     762759          1266.7  25509747.5  83093.64  2.8294444
+55      1997        Karnataka           308857   28999269          1266.7  29393920.7  95745.67 91.7473684
+56      1997        Karnataka             4342      24108          1266.7    413228.1   1346.02  4.4529412
+
+$Safflower
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide     Yield
+122      1997      West Bengal           127913      88943          1852.9 12173480.21  39653.03 0.6494444
+236      1998        Karnataka            65309      70294          1260.8  6452529.20  18939.61 1.0605882
+323      1998      West Bengal           100425      85448          2152.5  9921990.00  29123.25 0.7411111
+477      1999      West Bengal              107        298          2318.1    11355.91     28.89 3.6000000
+532      2000   Andhra Pradesh            39066       7893           935.6  3835109.22  10157.16 0.2044444
+628      2000        Karnataka            97589      40039          1213.3  9580312.13  25373.14 0.4372000
+
+$Sannhamp
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide     Yield
+123      1997      West Bengal             5046       3222          1852.9   480227.82   1564.26 0.6266667
+324      1998      West Bengal             3742       1877          2152.5   369709.60   1085.18 0.5757143
+478      1999      West Bengal              891        406          2318.1    94561.83    240.57 0.3777778
+479      1999      West Bengal           102044      72230          2318.1 10829929.72  27551.88 0.6382353
+629      2000        Karnataka            71447      47452          1213.3  7013951.99  18576.22 0.6863636
+748      2000      West Bengal             3061       1625          1907.7   300498.37    795.86 0.6828571
+
+$Sesamum
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide      Yield
+22       1997            Assam            31318    1287451        2051.400  2980534.06   9708.58 41.8969565
+82       1997        Meghalaya              898        814        3818.200    85462.66    278.38  0.9214286
+124      1997      West Bengal             1555       1172        1852.900   147989.35    482.05  1.1966667
+145      1998       Puducherry             2710     232369        1434.588   267748.00    785.90 82.5950000
+169      1998            Assam            30571    1223578        2354.400  3020414.80   8865.59 39.8930435
+237      1998        Karnataka           430676     127090        1260.800 42550788.80 124896.04  0.3826087
+
+$`Small millets`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+23       1997            Assam             9380      32618        2051.400  892694.60   2907.80  3.440435
+83       1997        Meghalaya               82        225        3818.200    7803.94     25.42  2.352000
+125      1997      West Bengal            25797    1818700        1852.900 2455100.49   7997.07 67.836250
+146      1998       Puducherry              649      19110        1434.588   64121.20    188.21 20.000000
+170      1998            Assam             9433      32437        2354.400  931980.40   2735.57  3.435652
+283      1998        Meghalaya               83        225        6552.700    8200.40     24.07  2.328000
+
+$Soyabean
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall  Fertilizer Pesticide     Yield
+84       1997        Meghalaya             5212      16978          3818.2   496026.04   1615.72 3.2214286
+126      1997      West Bengal              278          1          1852.9    26457.26     86.18 0.0000000
+238      1998        Karnataka           359514     112736          1260.8 35519983.20 104259.06 0.3904167
+284      1998        Meghalaya             5181      17291          6552.7   511882.80   1502.49 3.3028571
+328      1998      West Bengal              149        111          2152.5    14721.20     43.21 0.7100000
+414      1999        Meghalaya             5220      17591          6200.3   553998.60   1409.40 3.4157143
+
+$Sugarcane
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+24       1997            Assam             2465      11728          2051.4   234594.0    764.15 4.4182609
+57       1997        Karnataka           250698     118512          1266.7 23858928.7  77716.38 0.5483333
+85       1997        Meghalaya             3959      21087          3818.2   376778.0   1227.29 6.5371429
+127      1997      West Bengal            12481      23556          1852.9  1187816.8   3869.11 1.6611111
+147      1998            Assam            74457      55355          2354.4  7356351.6  21592.53 0.7843478
+171      1998            Assam             2798      13261          2354.4   276442.4    811.42 4.4452174
+
+$Sunflower
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+128      1997      West Bengal            69271      44480          1852.9  6592521.1  21474.01 1.8250000
+239      1998        Karnataka            43156      24211          1260.8  4263812.8  12515.24 0.5952174
+240      1998        Karnataka             5007      25386          1260.8   494691.6   1452.03 4.6823810
+241      1998        Karnataka           268981     219433          1260.8 26575322.8  78004.49 0.8488235
+330      1998      West Bengal            58878      25071          2152.5  5817146.4  17074.62 0.4022222
+487      1999      West Bengal            13283      20023          2318.1  1409724.8   3586.41 1.4255556
+
+$`Sweet potato`
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+25       1997            Assam              433         26          2051.4   41208.61    134.23 0.3800000
+86       1997        Meghalaya              742        505          3818.2   70616.14    230.02 0.6180000
+172      1998            Assam             1465        732          2354.4  144742.00    424.85 0.5695455
+262      1998           Kerala               41        228          3151.5    4050.80     11.89 5.5600000
+286      1998        Meghalaya              742        507          6552.7   73309.60    215.18 0.6100000
+358      1999            Assam             1373        695          2201.8  145716.49    370.71 0.5739130
+
+$Tapioca
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+26       1997            Assam            10071       6974          2051.4  958457.07   3122.01 0.6700000
+64       1997        Meghalaya              865        683          3818.2   82322.05    268.15 0.8066667
+87       1997        Meghalaya             1401       7126          3818.2  133333.17    434.31 5.4257143
+148      1998            Assam             7657       5389          2354.4  756511.60   2220.53 0.7091304
+173      1998            Assam            10729       7416          2354.4 1060025.20   3111.41 0.6669565
+263      1998           Kerala             3706       8034          3151.5  366152.80   1074.74 1.9978571
+
+$Tobacco
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+27       1997            Assam            84698     110054          2051.4  8060708.7  26256.38 1.2595238
+88       1997        Meghalaya             4287       6894          3818.2   407993.8   1328.97 1.3850000
+174      1998            Assam            89591      90509          2354.4  8851590.8  25981.39 0.9995455
+264      1998        Meghalaya             9585      11567          6552.7   946998.0   2779.65 1.1516667
+288      1998        Meghalaya             4287       6998          6552.7   423555.6   1243.23 1.6050000
+360      1999            Assam            76310      97583          2201.8  8098780.3  20603.70 1.2568182
+
+$Turmeric
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide     Yield
+28       1997        Karnataka            93100     133342          1266.7  8860327.0  28861.00 1.2935714
+58       1997           Kerala            76145      93995          3252.4  7246719.7  23604.95 1.1478571
+89       1997      West Bengal             8058      12423          1852.9   766879.9   2497.98 1.6917647
+129      1997      West Bengal            16694      10553          1852.9  1588768.0   5175.14 0.6283333
+175      1998              Goa             1500       1820          2964.9   148200.0    435.00 1.2100000
+242      1998           Kerala            73639      68479          3151.5  7275533.2  21355.31 0.7978571
+
+$Urad
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide    Yield
+130      1997      West Bengal           367374     810480        1852.900 34962983.6 113885.94 1.886667
+131      1998       Puducherry               66         23        1434.588     6520.8     19.14 0.350000
+332      1998      West Bengal           367472     778090        2152.500 36306233.6 106566.88 1.870556
+333      1999            Assam            73464      52924        2201.800  7796734.3  19835.28 0.746087
+440      1999      West Bengal             3077       2320        2318.100   326562.0    830.79 0.830000
+490      1999      West Bengal           364155     850778        2318.100 38647770.1  98321.85 2.096667
+
+$Wheat
+    Crop_Year New_Column_Name2 New_Column_Name3 Production Annual_Rainfall Fertilizer Pesticide      Yield
+29       1997        Karnataka           421810      98473        1266.700 40143657.7 130761.10  0.2682353
+59       1997           Kerala           173855      55520        3252.400 16545780.3  53895.05  0.2407143
+90       1997      West Bengal             3630       2181        1852.900   345467.1   1125.30  0.7776923
+132      1998       Puducherry              149        324        1434.588    14721.2     43.21  2.1700000
+176      1998              Goa             1900      14400        2964.900   187720.0    551.00  7.5800000
+243      1998           Kerala            30521     386588        3151.500  3015474.8   8851.09 12.8571429
+
