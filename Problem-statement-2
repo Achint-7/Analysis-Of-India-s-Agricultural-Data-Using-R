@@ -2,6 +2,213 @@
 
 # Convert the 'Crop' column to a factor
 crop_factor <- factor(agriculture$Crop)
+crop_factor
+
+#OUTPUT
+> crop_factor
+   [1] Arecanut              Arhar/Tur             Castor seed           Coconut               Cotton(lint)         
+   [6] Dry chillies          Gram                  Jute                  Linseed               Maize                
+  [11] Mesta                 Niger seed            Onion                 Other  Rabi pulses    Potato               
+  [16] Rapeseed &Mustard     Rice                  Rice                  Rice                  Sesamum              
+  [21] Small millets         Sugarcane             Sweet potato          Tapioca               Tobacco              
+  [26] Turmeric              Wheat                 Arecanut              Arhar/Tur             Bajra                
+  [31] Bajra                 Black pepper          Cardamom              Coriander             Dry chillies         
+  [36] Dry chillies          Garlic                Ginger                Groundnut             Groundnut            
+  [41] Horse-gram            Horse-gram            Jowar                 Jowar                 Jowar                
+  [46] Maize                 Maize                 Maize                 Ragi                  Ragi                 
+  [51] Ragi                  Rice                  Rice                  Rice                  Sugarcane            
+  [56] Turmeric              Wheat                 Arecanut              Black pepper          Cashewnut            
+  [61] Coconut               Tapioca               Arecanut              Arhar/Tur             Banana               
+  [66] Castor seed           Cotton(lint)          Dry chillies          Ginger                Gram                 
+  [71] Jute                  Linseed               Maize                 Mesta                 Mesta                
+  [76] Other  Rabi pulses    Potato                Rapeseed &Mustard     Rice                  Sesamum              
+  [81] Small millets         Soyabean              Sugarcane             Sweet potato          Tapioca              
+  [86] Tobacco               Turmeric              Wheat                 Arecanut              Arhar/Tur            
+  [91] Bajra                 Barley                Cardamom              Castor seed           Coconut              
+  [96] Cotton(lint)          Dry chillies          Gram                  Groundnut             Horse-gram           
+ [101] Jowar                 Jute                  Khesari               Linseed               Maize                
+ [106] Masoor                Mesta                 Moong(Green Gram)     Moong(Green Gram)     Moong(Green Gram)    
+ [111] Niger seed            Niger seed            Other Kharif pulses   Potato                Ragi                 
+ [116] Rapeseed &Mustard     Rice                  Rice                  Rice                  Safflower            
+ [121] Sannhamp              Sesamum               Small millets         Soyabean              Sugarcane            
+ [126] Sunflower             Turmeric              Urad                  Urad                  Wheat                
+ [131] Arecanut              Bajra                 Black pepper          Coriander             Cotton(lint)         
+ [136] Dry chillies          Groundnut             Onion                 Ragi                  Rice                 
+ [141] Rice                  Rice                  Sesamum               Small millets         Sugarcane            
+ [146] Tapioca               Arecanut              Arhar/Tur             Banana                Castor seed          
+ [151] Coconut               Cotton(lint)          Dry chillies          Gram                  Jute                 
+ [156] Linseed               Maize                 Mesta                 Niger seed            Onion                
+ [161] Other  Rabi pulses    Potato                Rapeseed &Mustard     Rice                  Rice                 
+ [166] Rice                  Sesamum               Small millets         Sugarcane             Sweet potato         
+ [171] Tapioca               Tobacco               Turmeric              Wheat                 Arecanut             
+ [176] Banana                Black pepper          Cashewnut             Coconut               Groundnut            
+ [181] Groundnut             Other  Rabi pulses    Other Kharif pulses   Ragi                  Rice                 
+ [186] Rice                  Sugarcane             Arecanut              Arhar/Tur             Bajra                
+ [191] Bajra                 Bajra                 Black pepper          Cardamom              Castor seed          
+ [196] Coconut               Coriander             Cotton(lint)          Dry chillies          Garlic               
+ [201] Ginger                Gram                  Groundnut             Groundnut             Horse-gram           
+ [206] Horse-gram            Jowar                 Jowar                 Jowar                 Linseed              
+ [211] Maize                 Maize                 Maize                 Moong(Green Gram)     Moong(Green Gram)    
+ [216] Niger seed            Onion                 Onion                 Onion                 Peas & beans (Pulses)
+ [221] Peas & beans (Pulses) Peas & beans (Pulses) Potato                Potato                Potato               
+ [226] Potato                Ragi                  Ragi                  Ragi                  Rapeseed &Mustard    
+ [231] Rice                  Rice                  Rice                  Safflower             Sesamum              
+ [236] Soyabean              Sunflower             Sunflower             Sunflower             Turmeric             
+ [241] Wheat                 Arecanut              Banana                Black pepper          Cardamom             
+ [246] Cashewnut             Coconut               Cotton(lint)          Dry chillies          Garlic               
+ [251] Ginger                Groundnut             Jowar                 Ragi                  Rice                 
+ [256] Rice                  Rice                  Sesamum               Sugarcane             Sweet potato         
+ [261] Tapioca               Tobacco               Turmeric              Arecanut              Arhar/Tur            
+ [266] Banana                Cotton(lint)          Dry chillies          Ginger                Gram                 
+ [271] Jute                  Linseed               Maize                 Mesta                 Mesta                
+ [276] Other  Rabi pulses    Potato                Rapeseed &Mustard     Rice                  Sesamum              
+ [281] Small millets         Soyabean              Sugarcane             Sweet potato          Tapioca              
+ [286] Tobacco               Turmeric              Wheat                 Arecanut              Arhar/Tur            
+ [291] Bajra                 Barley                Cardamom              Castor seed           Coconut              
+ [296] Cotton(lint)          Dry chillies          Ginger                Gram                  Groundnut            
+ [301] Horse-gram            Jowar                 Jute                  Khesari               Linseed              
+ [306] Maize                 Masoor                Mesta                 Moong(Green Gram)     Moong(Green Gram)    
+ [311] Moong(Green Gram)     Niger seed            Other Kharif pulses   Peas & beans (Pulses) Potato               
+ [316] Ragi                  Rapeseed &Mustard     Rice                  Rice                  Rice                 
+ [321] Safflower             Sannhamp              Sesamum               Small millets         Small millets        
+ [326] Soyabean              Sugarcane             Sunflower             Turmeric              Urad                 
+ [331] Urad                  Wheat                 Arecanut              Arhar/Tur             Banana               
+ [336] Castor seed           Coconut               Cotton(lint)          Dry chillies          Gram                 
+ [341] Jute                  Linseed               Maize                 Mesta                 Niger seed           
+ [346] Onion                 Other  Rabi pulses    Potato                Rapeseed &Mustard     Rice                 
+ [351] Rice                  Rice                  Sesamum               Small millets         Sugarcane            
+ [356] Sweet potato          Tapioca               Tobacco               Turmeric              Wheat                
+ [361] Arecanut              Banana                Black pepper          Cashewnut             Coconut              
+ [366] Groundnut             Groundnut             Other  Rabi pulses    Other Kharif pulses   Ragi                 
+ [371] Rice                  Rice                  Sugarcane             Arecanut              Banana               
+ [376] Black pepper          Cardamom              Cashewnut             Coconut               Cotton(lint)         
+ [381] Dry chillies          Garlic                Ginger                Groundnut             Jowar                
+ [386] Ragi                  Rice                  Rice                  Rice                  Sesamum              
+ [391] Sugarcane             Sweet potato          Tapioca               Tobacco               Turmeric             
+ [396] Arecanut              Arhar/Tur             Banana                Castor seed           Cotton(lint)         
+ [401] Dry chillies          Ginger                Gram                  Jute                  Maize                
+ [406] Mesta                 Potato                Rapeseed &Mustard     Rice                  Rice                 
+ [411] Sesamum               Soyabean              Sugarcane             Sweet potato          Tapioca              
+ [416] Tobacco               Turmeric              Arecanut              Bajra                 Banana               
+ [421] Black pepper          Cashewnut             Coconut               Coriander             Cotton(lint)         
+ [426] Dry chillies          Ginger                Groundnut             Jowar                 Moong(Green Gram)    
+ [431] Onion                 Other  Rabi pulses    Ragi                  Rapeseed &Mustard     Rice                 
+ [436] Sugarcane             Tapioca               Urad                  Arecanut              Arhar/Tur            
+ [441] Bajra                 Barley                Cardamom              Castor seed           Coconut              
+ [446] Cotton(lint)          Dry chillies          Dry chillies          Ginger                Gram                 
+ [451] Groundnut             Groundnut             Groundnut             Horse-gram            Jowar                
+ [456] Jute                  Khesari               Linseed               Maize                 Masoor               
+ [461] Mesta                 Moong(Green Gram)     Moong(Green Gram)     Moong(Green Gram)     Niger seed           
+ [466] Other Kharif pulses   Peas & beans (Pulses) Potato                Potato                Ragi                 
+ [471] Rapeseed &Mustard     Rice                  Rice                  Rice                  Safflower            
+ [476] Sannhamp              Sannhamp              Sesamum               Sesamum               Sesamum              
+ [481] Small millets         Small millets         Soyabean              Sugarcane             Sunflower            
+ [486] Tobacco               Turmeric              Urad                  Urad                  Wheat                
+ [491] Arecanut              Arhar/Tur             Arhar/Tur             Bajra                 Bajra                
+ [496] Banana                Cashewnut             Castor seed           Coconut               Coriander            
+ [501] Cotton(lint)          Dry chillies          Dry chillies          Ginger                Gram                 
+ [506] Gram                  Groundnut             Groundnut             Horse-gram            Horse-gram           
+ [511] Jowar                 Jowar                 Linseed               Maize                 Maize                
+ [516] Mesta                 Moong(Green Gram)     Moong(Green Gram)     Niger seed            Onion                
+ [521] Onion                 Other  Rabi pulses    Other Kharif pulses   Potato                Ragi                 
+ [526] Ragi                  Rapeseed &Mustard     Rice                  Rice                  Safflower            
+ [531] Sesamum               Sesamum               Small millets         Small millets         Sugarcane            
+ [536] Sunflower             Sweet potato          Tapioca               Tobacco               Urad                 
+ [541] Urad                  Wheat                 Arecanut              Arhar/Tur             Banana               
+ [546] Castor seed           Coconut               Cotton(lint)          Dry chillies          Gram                 
+ [551] Jute                  Linseed               Maize                 Mesta                 Niger seed           
+ [556] Onion                 Other  Rabi pulses    Potato                Rapeseed &Mustard     Rice                 
+ [561] Rice                  Rice                  Sesamum               Small millets         Sugarcane            
+ [566] Sweet potato          Tapioca               Tobacco               Turmeric              Wheat                
+ [571] Arecanut              Banana                Black pepper          Cashewnut             Coconut              
+ [576] Groundnut             Groundnut             Other  Rabi pulses    Other Kharif pulses   Ragi                 
+ [581] Rice                  Rice                  Sugarcane             Arecanut              Arhar/Tur            
+ [586] Bajra                 Bajra                 Bajra                 Banana                Black pepper         
+ [591] Cardamom              Castor seed           Coconut               Coriander             Cotton(lint)         
+ [596] Dry chillies          Garlic                Ginger                Gram                  Groundnut            
+ [601] Groundnut             Horse-gram            Horse-gram            Jowar                 Jowar                
+ [606] Jowar                 Linseed               Maize                 Maize                 Maize                
+ [611] Mesta                 Moong(Green Gram)     Moong(Green Gram)     Niger seed            Onion                
+ [616] Other  Rabi pulses    Other Kharif pulses   Potato                Ragi                  Ragi                 
+ [621] Ragi                  Rapeseed &Mustard     Rice                  Rice                  Rice                 
+ [626] Safflower             Sannhamp              Sesamum               Small millets         Soyabean             
+ [631] Sugarcane             Sunflower             Sunflower             Sunflower             Sweet potato         
+ [636] Tapioca               Tobacco               Turmeric              Urad                  Urad                 
+ [641] Wheat                 Arecanut              Banana                Black pepper          Cardamom             
+ [646] Cashewnut             Coconut               Cotton(lint)          Garlic                Ginger               
+ [651] Groundnut             Jowar                 Ragi                  Rice                  Rice                 
+ [656] Rice                  Sesamum               Sugarcane             Sweet potato          Tapioca              
+ [661] Tobacco               Turmeric              Arecanut              Arhar/Tur             Banana               
+ [666] Castor seed           Cotton(lint)          Dry chillies          Ginger                Gram                 
+ [671] Jute                  Linseed               Maize                 Mesta                 Other  Rabi pulses   
+ [676] Potato                Rapeseed &Mustard     Rice                  Rice                  Sesamum              
+ [681] Small millets         Soyabean              Sugarcane             Sweet potato          Tapioca              
+ [686] Tobacco               Turmeric              Wheat                 Arecanut              Bajra                
+ [691] Banana                Black pepper          Cashewnut             Coconut               Coriander            
+ [696] Cotton(lint)          Dry chillies          Ginger                Groundnut             Jowar                
+ [701] Moong(Green Gram)     Moong(Green Gram)     Onion                 Other  Rabi pulses    Ragi                 
+ [706] Rapeseed &Mustard     Rice                  Sugarcane             Tapioca               Urad                 
+ [711] Urad                  Arecanut              Arhar/Tur             Bajra                 Barley               
+ [716] Castor seed           Coconut               Cotton(lint)          Dry chillies          Ginger               
+ [721] Gram                  Groundnut             Groundnut             Groundnut             Horse-gram           
+ [726] Jowar                 Jute                  Khesari               Linseed               Maize                
+ [731] Masoor                Mesta                 Moong(Green Gram)     Moong(Green Gram)     Moong(Green Gram)    
+ [736] Niger seed            Other Kharif pulses   Peas & beans (Pulses) Potato                Ragi                 
+ [741] Rapeseed &Mustard     Rice                  Rice                  Rice                  Safflower            
+ [746] Sannhamp              Sesamum               Small millets         Small millets         Soyabean             
+ [751] Sugarcane             Sunflower             Tobacco               Turmeric              Urad                 
+ [756] Urad                  Wheat                 Arecanut              Arhar/Tur             Arhar/Tur            
+ [761] Bajra                 Bajra                 Banana                Cashewnut             Castor seed          
+ [766] Coconut               Coriander             Cotton(lint)          Dry chillies          Dry chillies         
+ [771] Ginger                Gram                  Gram                  Groundnut             Groundnut            
+ [776] Horse-gram            Horse-gram            Jowar                 Jowar                 Linseed              
+ [781] Maize                 Maize                 Mesta                 Moong(Green Gram)     Moong(Green Gram)    
+ [786] Niger seed            Onion                 Onion                 Other  Rabi pulses    Other Kharif pulses  
+ [791] Potato                Ragi                  Ragi                  Rapeseed &Mustard     Rice                 
+ [796] Rice                  Safflower             Sesamum               Sesamum               Small millets        
+ [801] Small millets         Sugarcane             Sunflower             Sweet potato          Tapioca              
+ [806] Tobacco               Urad                  Urad                  Wheat                 Arecanut             
+ [811] Arhar/Tur             Banana                Castor seed           Coconut               Cotton(lint)         
+ [816] Dry chillies          Gram                  Jute                  Linseed               Maize                
+ [821] Masoor                Mesta                 Moong(Green Gram)     Niger seed            Onion                
+ [826] Other  Rabi pulses    Peas & beans (Pulses) Potato                Rapeseed &Mustard     Rice                 
+ [831] Rice                  Rice                  Sesamum               Small millets         Sugarcane            
+ [836] Sweet potato          Tapioca               Tobacco               Turmeric              Urad                 
+ [841] Wheat                 Arecanut              Banana                Black pepper          Cashewnut            
+ [846] Coconut               Groundnut             Groundnut             Other  Rabi pulses    Other Kharif pulses  
+ [851] Ragi                  Rice                  Rice                  Sugarcane             Arecanut             
+ [856] Arhar/Tur             Bajra                 Bajra                 Bajra                 Black pepper         
+ [861] Castor seed           Coconut               Coriander             Cotton(lint)          Dry chillies         
+ [866] Ginger                Gram                  Groundnut             Horse-gram            Horse-gram           
+ [871] Jowar                 Jowar                 Jowar                 Linseed               Maize                
+ [876] Maize                 Maize                 Mesta                 Moong(Green Gram)     Moong(Green Gram)    
+ [881] Niger seed            Onion                 Other  Rabi pulses    Other Kharif pulses   Peas & beans (Pulses)
+ [886] Potato                Ragi                  Ragi                  Ragi                  Rapeseed &Mustard    
+ [891] Rice                  Rice                  Rice                  Safflower             Sannhamp             
+ [896] Sesamum               Small millets         Soyabean              Sugarcane             Sunflower            
+ [901] Sunflower             Sunflower             Turmeric              Urad                  Urad                 
+ [906] Wheat                 Arecanut              Banana                Black pepper          Cardamom             
+ [911] Cashewnut             Coconut               Cotton(lint)          Garlic                Ginger               
+ [916] Groundnut             Jowar                 Ragi                  Rice                  Rice                 
+ [921] Rice                  Sesamum               Sugarcane             Sweet potato          Tapioca              
+ [926] Tobacco               Turmeric              Arecanut              Arhar/Tur             Castor seed          
+ [931] Cotton(lint)          Dry chillies          Ginger                Gram                  Jute                 
+ [936] Maize                 Mesta                 Potato                Rapeseed &Mustard     Rice                 
+ [941] Sesamum               Small millets         Soyabean              Sugarcane             Sweet potato         
+ [946] Tapioca               Tobacco               Turmeric              Wheat                 Arecanut             
+ [951] Bajra                 Banana                Black pepper          Cashewnut             Coconut              
+ [956] Coriander             Cotton(lint)          Ginger                Groundnut             Moong(Green Gram)    
+ [961] Onion                 Other  Rabi pulses    Ragi                  Rapeseed &Mustard     Rice                 
+ [966] Sugarcane             Tapioca               Urad                  Arecanut              Arhar/Tur            
+ [971] Bajra                 Barley                Cardamom              Castor seed           Coconut              
+ [976] Cotton(lint)          Dry chillies          Ginger                Gram                  Groundnut            
+ [981] Groundnut             Groundnut             Horse-gram            Jowar                 Jute                 
+ [986] Khesari               Linseed               Maize                 Masoor                Mesta                
+ [991] Moong(Green Gram)     Moong(Green Gram)     Moong(Green Gram)     Niger seed            Other Kharif pulses  
+ [996] Peas & beans (Pulses) Potato                Ragi                  Rapeseed &Mustard     Rice                 
+ [ reached getOption("max.print") -- omitted 18689 entries ]
+55 Levels: Arecanut Arhar/Tur Bajra Banana Barley Black pepper Cardamom Cashewnut Castor seed Coconut  Coriander ... Wheat
+
 
 
 
