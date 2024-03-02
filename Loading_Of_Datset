@@ -1,0 +1,14 @@
+# Load the 'agriculture.csv' file from the specified path into a data frame named 'agriculture'
+# The "agriculture.csv" dataset has been provided in this repository itself kindly download/clone it.
+
+agriculture <- read.csv("--path--/agriculture.csv")
+
+# The column names of the data frame might contain spaces, which can cause issues when trying to access these columns later.
+# To avoid this, we replace any spaces in the column names with underscores.
+# The 'gsub' function is used for this purpose. It takes three arguments:
+# 1. The pattern to replace - "\\s+" means one or more spaces.
+# 2. The replacement - "_" is an underscore.
+# 3. The character vector where replacements are to be made - 'colnames(agriculture)' is the vector of column names of our data frame.
+# The result is assigned back to 'colnames(agriculture)', effectively renaming the columns of the data frame.
+
+colnames(agriculture) <- gsub("\\s+", "_", colnames(agriculture))
