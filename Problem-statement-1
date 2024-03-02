@@ -1,0 +1,30 @@
+# 1. Basic visual representations
+
+# Histogram of Annual Rainfall
+# This will create a histogram that provides a visual representation of the distribution of Annual Rainfall values in the dataset.
+
+hist(agriculture$Annual_Rainfall, main="Histogram of Annual Rainfall", xlab="Annual Rainfall")
+
+
+# Box Plot of Yield by Season
+# This will create a box plot that shows the distribution of Yield values for each Season in the dataset.
+
+boxplot(agriculture$Yield ~ agriculture$Season, main="Box Plot of Yield by Season", xlab="Season", ylab="Yield")
+
+
+# Scatter Plot of Area vs Production
+# This will create a scatter plot that shows the relationship between Area and Production in the dataset.
+
+plot(agriculture$Area, agriculture$Production, main="Scatter Plot of Area vs Production", xlab="Area", ylab="Production")
+
+
+# Line Plot of Annual Rainfall over Years
+# This will create a line plot that shows how the Annual Rainfall has changed over the years in the dataset.
+
+lines(agriculture$Crop_Year, agriculture$Annual_Rainfall, type="l", col="blue", main="Line Plot of Annual Rainfall over Years", xlab="Crop Year", ylab="Annual Rainfall")
+
+
+# Bar Plot of State Counts
+# This will create a bar plot that shows the count of records for each State in the dataset.
+
+barplot(table(agriculture$State), main="Bar Plot of State Counts", xlab="State", ylab="Count")
