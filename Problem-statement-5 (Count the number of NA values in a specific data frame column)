@@ -1,0 +1,14 @@
+# 5. Count the number of NA values in a specific data frame column
+
+# The 'is.na' function returns a logical vector with 'TRUE' in the positions where the input vector has 'NA' values.
+# When used with the 'Annual_Rainfall' column of the 'agriculture' data frame, it will return a logical vector with the same length as the column, with 'TRUE' for 'NA' values and 'FALSE' otherwise.
+# The 'sum' function adds up all the 'TRUE' values, effectively counting the number of 'NA' values in the 'Annual_Rainfall' column.
+na_count_annual_rainfall <- sum(is.na(agriculture$Annual_Rainfall))
+
+# Print the count of NA values in the 'Annual_Rainfall' column
+na_count_annual_rainfall
+
+
+#OUTPUT
+> na_count_annual_rainfall
+[1] 0
