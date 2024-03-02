@@ -1,0 +1,115 @@
+# 11. Merge the 2 data frames column or row-wise
+
+# Create a copy of the original dataset
+# The '<-' operator is used for assignment in R, so we're assigning the 'agriculture' data frame to 'duplicated_data', effectively creating a copy of the data frame.
+duplicated_data <- agriculture
+
+# Add an extra column to the 'duplicated_data' data frame
+# The '$' operator is used to access variables within a data frame, so 'duplicated_data$extra_column' refers to the 'extra_column' variable in the 'duplicated_data' data frame.
+# We're assigning the value 1 to this variable, effectively adding a new column to the data frame.
+duplicated_data$extra_column <- 1
+
+# Merge the two data frames (actual, duplicated with one or more additional features)
+# The 'merge' function merges two data frames by common columns or row names, or, if not present, by column order.
+# The 'all = TRUE' argument ensures that all rows from both data frames are included in the output, even if they don't match on the merge columns.
+# The result is assigned to 'merged_data'.
+merged_data <- merge(agriculture, duplicated_data, all = TRUE)
+
+# Print the 'merged_data' data frame to the console to verify that the data frames have been merged correctly.
+merged_data
+
+
+#OUTPUT
+> merged_data
+       Crop Crop_Year      Season          State   Area Production Annual_Rainfall  Fertilizer Pesticide     Yield extra_column
+1  Arecanut      1997 Whole Year           Assam  73814      56708        2051.400  7024878.38  22882.34 0.7960870            1
+2  Arecanut      1997 Whole Year       Karnataka  93100     133342        1266.700  8860327.00  28861.00 1.2935714            1
+3  Arecanut      1997 Whole Year          Kerala  76145      93995        3252.400  7246719.65  23604.95 1.1478571            1
+4  Arecanut      1997 Whole Year       Meghalaya   9569      12116        3818.200   910681.73   2966.39 1.2457143            1
+5  Arecanut      1997 Whole Year     West Bengal   8058      12423        1852.900   766879.86   2497.98 1.6917647            1
+6  Arecanut      1998 Kharif          Puducherry     66         23        1434.588     6520.80     19.14 0.3500000            1
+7  Arecanut      1998 Whole Year           Assam  74457      55355        2354.400  7356351.60  21592.53 0.7843478            1
+8  Arecanut      1998 Whole Year             Goa   1500       1820        2964.900   148200.00    435.00 1.2100000            1
+9  Arecanut      1998 Whole Year       Karnataka  98047     648365        1260.800  9687043.60  28433.63 6.2320000            1
+10 Arecanut      1998 Whole Year          Kerala  73639      68479        3151.500  7275533.20  21355.31 0.7978571            1
+11 Arecanut      1998 Whole Year       Meghalaya   9585      11567        6552.700   946998.00   2779.65 1.1516667            1
+12 Arecanut      1998 Whole Year     West Bengal   8239      13665        2152.500   814013.20   2389.31 1.5952941            1
+13 Arecanut      1999 Whole Year           Assam  73464      52924        2201.800  7796734.32  19835.28 0.7460870            1
+14 Arecanut      1999 Whole Year             Goa   1550       1880        3879.300   164501.50    418.50 1.2100000            1
+15 Arecanut      1999 Whole Year          Kerala  81941      83337        2914.600  8696398.33  22124.07 0.8314286            1
+16 Arecanut      1999 Whole Year       Meghalaya   9645      12510        6200.300  1023623.85   2604.15 1.2450000            1
+17 Arecanut      1999 Whole Year      Puducherry     65        130        1434.588     6898.45     17.55 2.0000000            1
+18 Arecanut      1999 Whole Year     West Bengal   7677      13124        2318.100   814760.01   2072.79 1.8641176            1
+19 Arecanut      2000 Whole Year  Andhra Pradesh    262        724         935.600    25720.54     68.12 2.7800000            1
+20 Arecanut      2000 Whole Year           Assam  73237      68261        1965.500  7189676.29  19041.62 0.9573913            1
+21 Arecanut      2000 Whole Year             Goa   1600       2500        3886.900   157072.00    416.00 1.5600000            1
+22 Arecanut      2000 Whole Year       Karnataka 119093     162741        1213.300 11691359.81  30964.18 1.2925000            1
+23 Arecanut      2000 Whole Year          Kerala  87360      87947        2412.600  8576131.20  22713.60 0.8257143            1
+24 Arecanut      2000 Whole Year       Meghalaya  11184      13721        6258.800  1097933.28   2907.84 1.1785714            1
+25 Arecanut      2000 Whole Year      Puducherry     65        130        1434.588     6381.05     16.90 2.0000000            1
+26 Arecanut      2000 Whole Year     West Bengal   7773      12191        1907.700   763075.41   2020.98 1.8400000            1
+27 Arecanut      2001 Whole Year  Andhra Pradesh    268        449         928.400    27370.84     69.68 1.7100000            1
+28 Arecanut      2001 Whole Year           Assam  73223      69663        1824.700  7478264.99  19037.98 0.9856522            1
+29 Arecanut      2001 Whole Year             Goa   1600       2500        2530.600   163408.00    416.00 1.5600000            1
+30 Arecanut      2001 Whole Year       Karnataka 136065     182800        1002.900 13896318.45  35376.90 1.2920000            1
+31 Arecanut      2001 Whole Year          Kerala  93193      84679        2946.700  9517801.09  24230.18 0.7728571            1
+32 Arecanut      2001 Whole Year       Meghalaya  11128      14101        4241.000  1136502.64   2893.28 1.1857143            1
+33 Arecanut      2001 Whole Year      Puducherry     65        137        1434.588     6638.45     16.90 2.1100000            1
+34 Arecanut      2001 Whole Year     West Bengal   9276      14885        1556.600   947357.88   2411.76 1.8617647            1
+35 Arecanut      2002 Whole Year  Andhra Pradesh    296        427         648.100    28022.32     74.00 1.4525000            1
+36 Arecanut      2002 Whole Year           Assam  73664      51631        1973.600  6973770.88  18416.00 0.7113043            1
+37 Arecanut      2002 Whole Year             Goa   1600       2500        2516.300   151472.00    400.00 1.5600000            1
+38 Arecanut      2002 Whole Year          Kerala  97485     107279        2511.200  9228904.95  24371.25 0.9107143            1
+39 Arecanut      2002 Whole Year      Tamil Nadu   4956          0         315.900   469184.52   1239.00 0.0000000            1
+40 Arecanut      2002 Whole Year     West Bengal   9081      16568        1629.100   859698.27   2270.25 2.9982353            1
+41 Arecanut      2003 Whole Year  Andhra Pradesh    311        221         826.000    30782.78     74.64 0.7040000            1
+42 Arecanut      2003 Whole Year           Assam  74001      70414        2213.700  7324618.98  17760.24 0.9791304            1
+43 Arecanut      2003 Whole Year             Goa   1600       2650        3011.600   158368.00    384.00 1.6600000            1
+44 Arecanut      2003 Whole Year       Karnataka 148939     198857         867.600 14741982.22  35745.36 1.3027273            1
+45 Arecanut      2003 Whole Year          Kerala 102504     105490        2386.000 10145845.92  24600.96 0.8600000            1
+46 Arecanut      2003 Whole Year       Meghalaya  11189      14244        3321.300  1107487.22   2685.36 1.1942857            1
+47 Arecanut      2003 Whole Year      Puducherry     64         77        1434.588     6334.72     15.36 1.2000000            1
+48 Arecanut      2003 Whole Year      Tamil Nadu   5219          0         345.600   516576.62   1252.56 0.0000000            1
+49 Arecanut      2003 Whole Year     West Bengal   9166      18519        1526.700   907250.68   2199.84 2.0966667            1
+50 Arecanut      2004 Whole Year       Karnataka 152759     203646        1117.700 16549910.06  32079.39 1.2972727            1
+51 Arecanut      2004 Whole Year          Kerala 107572     110342        2880.200 11654350.48  22590.12 0.8542857            1
+52 Arecanut      2004 Whole Year       Meghalaya  11233      14169        4767.900  1216983.22   2358.93 1.1542857            1
+53 Arecanut      2004 Whole Year      Tamil Nadu   5077       7390        1034.000   550042.18   1066.17 1.5500000            1
+54 Arecanut      2005 Whole Year  Andhra Pradesh    293        234        1075.500    35136.56     61.53 0.8025000            1
+55 Arecanut      2005 Whole Year           Assam  71176      66778        2184.600  8535425.92  14946.96 0.9134783            1
+56 Arecanut      2005 Whole Year       Karnataka 161151    1033658        1316.200 19325227.92  33841.71 6.2123810            1
+57 Arecanut      2005 Whole Year          Kerala 108590     119309        3030.900 13022112.80  22803.90 0.9585714            1
+58 Arecanut      2005 Whole Year       Meghalaya  11507      15530        3374.400  1379919.44   2416.47 1.2457143            1
+59 Arecanut      2005 Whole Year      Tamil Nadu   4773       9198        1364.100   572378.16   1002.33 1.2127273            1
+60 Arecanut      2005 Whole Year     West Bengal   9363      29287        1650.100  1122810.96   1966.23 2.8211765            1
+61 Arecanut      2006 Kharif          Puducherry     63         82        1434.588     8045.73     13.86 1.3000000            1
+62 Arecanut      2006 Rabi             Meghalaya  12081      16561        2454.700  1542864.51   2657.82 1.2542857            1
+63 Arecanut      2006 Whole Year  Andhra Pradesh    255        176         845.200    32566.05     56.10 0.6850000            1
+64 Arecanut      2006 Whole Year           Assam  69104      55044        1774.900  8825271.84  15202.88 0.8170370            1
+65 Arecanut      2006 Whole Year       Karnataka 168401     223939        1146.300 21506491.71  37048.22 1.2866667            1
+66 Arecanut      2006 Whole Year          Kerala 102078     109968        3429.700 13036381.38  22457.16 0.9335714            1
+67 Arecanut      2006 Whole Year      Puducherry     63         82        1434.588     8045.73     13.86 1.3000000            1
+68 Arecanut      2006 Whole Year      Tamil Nadu   5526      11904         927.900   705725.46   1215.72 1.6036364            1
+69 Arecanut      2006 Whole Year     West Bengal  24382     106052        1631.400  3113825.22   5364.04 1.9576471            1
+70 Arecanut      2007 Kharif          Puducherry     61         78        1434.588     8137.40      9.76 1.2800000            1
+71 Arecanut      2007 Whole Year           Assam  66235      56665        2154.100  8835749.00  10597.60 0.8566667            1
+72 Arecanut      2007 Whole Year       Karnataka 174404    1114484        1323.300 23265493.60  27904.64 6.2114286            1
+73 Arecanut      2007 Whole Year          Kerala  99787     114690        3489.600 13311585.80  15965.92 0.9214286            1
+74 Arecanut      2007 Whole Year      Tamil Nadu   5553      11739        1067.200   740770.20    888.48 2.0573913            1
+75 Arecanut      2007 Whole Year     West Bengal  11388      20869        2007.500  1519159.20   1822.08 1.6988235            1
+76 Arecanut      2008 Kharif          Puducherry     61         79        1434.588     8725.44      5.49 1.3000000            1
+77 Arecanut      2008 Whole Year  Andhra Pradesh    359        265         944.600    51351.36     32.31 0.9150000            1
+78 Arecanut      2008 Whole Year           Assam  66072      63895        2109.900  9450938.88   5946.48 0.9892593            1
+79 Arecanut      2008 Whole Year       Karnataka 184515    1174591        1164.100 26393025.60  16606.35 6.2142857            1
+80 Arecanut      2008 Whole Year          Kerala  97492     125654        2524.800 13945255.68   8774.28 1.0471429            1
+81 Arecanut      2008 Whole Year       Meghalaya  12632      17400        3114.300  1806881.28   1136.88 1.2442857            1
+82 Arecanut      2008 Whole Year      Tamil Nadu   5612      11061        1201.900   802740.48    505.08 1.7083333            1
+83 Arecanut      2008 Whole Year     West Bengal  11394      21157        1560.100  1629797.76   1025.46 1.6238889            1
+84 Arecanut      2009 Kharif          Puducherry     61         77        1434.588     9505.02     10.37 1.2600000            1
+85 Arecanut      2009 Whole Year  Andhra Pradesh    386        198         711.000    60146.52     65.62 0.8550000            1
+86 Arecanut      2009 Whole Year           Assam  68947      68556        1727.100 10743321.54  11720.99 0.9818519            1
+87 Arecanut      2009 Whole Year       Karnataka 195802    1243385        1321.000 30509867.64  33286.34 6.2104762            1
+88 Arecanut      2009 Whole Year          Kerala  99190     116763        2821.500 15455785.80  16862.30 0.9764286            1
+89 Arecanut      2009 Whole Year       Meghalaya  13621      19396        2995.900  2122424.22   2315.57 1.2485714            1
+90 Arecanut      2009 Whole Year      Tamil Nadu   5456      10437         928.500   850153.92    927.52 1.6050000            1
+ [ reached 'max' / getOption("max.print") -- omitted 19599 rows ]
