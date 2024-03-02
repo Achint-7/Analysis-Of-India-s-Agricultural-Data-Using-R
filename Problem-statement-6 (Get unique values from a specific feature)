@@ -1,0 +1,23 @@
+# f. Get unique values from a specific feature
+
+# The 'unique' function returns a vector of the unique values present in the input vector.
+# When used with the 'Crop' column of the 'agriculture' data frame, it will return a vector of the unique crop names in the dataset.
+unique_crops <- unique(agriculture$Crop)
+
+# Print the unique crop names
+unique_crops
+
+#OUTPUT
+
+> unique_crops
+ [1] "Arecanut"              "Arhar/Tur"             "Castor seed"           "Coconut "              "Cotton(lint)"         
+ [6] "Dry chillies"          "Gram"                  "Jute"                  "Linseed"               "Maize"                
+[11] "Mesta"                 "Niger seed"            "Onion"                 "Other  Rabi pulses"    "Potato"               
+[16] "Rapeseed &Mustard"     "Rice"                  "Sesamum"               "Small millets"         "Sugarcane"            
+[21] "Sweet potato"          "Tapioca"               "Tobacco"               "Turmeric"              "Wheat"                
+[26] "Bajra"                 "Black pepper"          "Cardamom"              "Coriander"             "Garlic"               
+[31] "Ginger"                "Groundnut"             "Horse-gram"            "Jowar"                 "Ragi"                 
+[36] "Cashewnut"             "Banana"                "Soyabean"              "Barley"                "Khesari"              
+[41] "Masoor"                "Moong(Green Gram)"     "Other Kharif pulses"   "Safflower"             "Sannhamp"             
+[46] "Sunflower"             "Urad"                  "Peas & beans (Pulses)" "other oilseeds"        "Other Cereals"        
+[51] "Cowpea(Lobia)"         "Oilseeds total"        "Guar seed"             "Other Summer Pulses"   "Moth"   
