@@ -35,7 +35,7 @@ Welcome to my GitHub! 👋 I'm Achint Tripathi, a passionate Computer Science En
 - Aviation, Swimming, Physics, Geo-Politics
 
 Let's connect and collaborate on exciting projects!
-
+For any queries or suggestions, feel free to reach out on my Telegram Channel - https://t.me/+lDzyfbqNQLwyYzI1
 ---
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
