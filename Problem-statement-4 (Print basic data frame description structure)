@@ -1,0 +1,55 @@
+# 4. Print basic data frame description structure
+
+# The 'str' function provides a compact, human-readable description of the structure of an object, in this case, the 'agriculture' data frame.
+# It gives you a quick overview of the data, including the number of observations (rows), the number of variables (columns), and the type of each variable.
+str(agriculture)
+
+# The 'summary' function provides a statistical summary of the 'agriculture' data frame, including the minimum, 1st quartile, median, mean, 3rd quartile, and maximum for numeric variables, and counts for factor variables.
+# This can give you a sense of the distribution of each variable.
+summary(agriculture)
+
+# The 'head' function returns the first 6 rows of the 'agriculture' data frame by default.
+# This can give you a sense of what the data looks like.
+head(agriculture)
+
+#OUTPUT
+> str(agriculture)
+'data.frame':	19689 obs. of  10 variables:
+ $ Crop           : chr  "Arecanut" "Arhar/Tur" "Castor seed" "Coconut " ...
+ $ Crop_Year      : int  1997 1997 1997 1997 1997 1997 1997 1997 1997 1997 ...
+ $ Season         : chr  "Whole Year " "Kharif     " "Kharif     " "Whole Year " ...
+ $ State          : chr  "Assam" "Assam" "Assam" "Assam" ...
+ $ Area           : num  73814 6637 796 19656 1739 ...
+ $ Production     : num  5.67e+04 4.68e+03 2.20e+01 1.27e+08 7.94e+02 ...
+ $ Annual_Rainfall: num  2051 2051 2051 2051 2051 ...
+ $ Fertilizer     : num  7024878 631643 75755 1870662 165501 ...
+ $ Pesticide      : num  22882 2057 247 6093 539 ...
+ $ Yield          : num  0.796 0.71 0.238 5238.052 0.421 ...
+
+
+> summary(agriculture)
+     Crop             Crop_Year       Season             State                Area            Production        Annual_Rainfall 
+ Length:19689       Min.   :1997   Length:19689       Length:19689       Min.   :       0   Min.   :0.000e+00   Min.   : 301.3  
+ Class :character   1st Qu.:2004   Class :character   Class :character   1st Qu.:    1390   1st Qu.:1.393e+03   1st Qu.: 940.7  
+ Mode  :character   Median :2010   Mode  :character   Mode  :character   Median :    9317   Median :1.380e+04   Median :1247.6  
+                    Mean   :2009                                         Mean   :  179927   Mean   :1.644e+07   Mean   :1437.8  
+                    3rd Qu.:2015                                         3rd Qu.:   75112   3rd Qu.:1.227e+05   3rd Qu.:1643.7  
+                    Max.   :2020                                         Max.   :50808100   Max.   :6.326e+09   Max.   :6552.7  
+   Fertilizer          Pesticide            Yield          
+ Min.   :5.400e+01   Min.   :       0   Min.   :    0.000  
+ 1st Qu.:1.880e+05   1st Qu.:     357   1st Qu.:    0.600  
+ Median :1.235e+06   Median :    2422   Median :    1.030  
+ Mean   :2.410e+07   Mean   :   48848   Mean   :   79.954  
+ 3rd Qu.:1.000e+07   3rd Qu.:   20042   3rd Qu.:    2.389  
+ Max.   :4.835e+09   Max.   :15750511   Max.   :21105.000  
+
+
+> head(agriculture)
+          Crop Crop_Year      Season State  Area Production Annual_Rainfall Fertilizer Pesticide        Yield
+1     Arecanut      1997 Whole Year  Assam 73814      56708          2051.4 7024878.38  22882.34    0.7960870
+2    Arhar/Tur      1997 Kharif      Assam  6637       4685          2051.4  631643.29   2057.47    0.7104348
+3  Castor seed      1997 Kharif      Assam   796         22          2051.4   75755.32    246.76    0.2383333
+4     Coconut       1997 Whole Year  Assam 19656  126905000          2051.4 1870661.52   6093.36 5238.0517390
+5 Cotton(lint)      1997 Kharif      Assam  1739        794          2051.4  165500.63    539.09    0.4209091
+6 Dry chillies      1997 Whole Year  Assam 13587       9073          2051.4 1293074.79   4211.97    0.6436364
+
